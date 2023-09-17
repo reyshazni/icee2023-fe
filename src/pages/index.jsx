@@ -9,6 +9,7 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import VideoPlayer from '@/components/VideoPlayer'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <VideoPlayer />
         <PrimaryFeatures />
         <SecondaryFeatures />
         <CallToAction />

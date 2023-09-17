@@ -108,6 +108,8 @@ export function Header() {
                               Video
                             </MobileNavLink>
                             <MobileNavLink href="#faqs">FAQs</MobileNavLink>
+                            <MobileNavLink href="/video">Video</MobileNavLink>
+
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button href="/login" variant="outline">

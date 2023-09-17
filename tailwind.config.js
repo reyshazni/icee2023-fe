@@ -37,7 +37,9 @@ module.exports = {
         gray: colors.neutral,
       }),
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        // sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        montserrat: ['Montserrat', 'sans-serif'],
+        sarmady: ['Sarmady', 'sans-serif'],
       },
       keyframes: {
         'fade-in': {

@@ -19,7 +19,6 @@ export default function Video() {
 
   return (
     <div className="App">
-      <h1>Autoplay example</h1>
       <div>
         <video
           style={{ maxWidth: '100%', width: '800px', margin: '0 auto' }}
