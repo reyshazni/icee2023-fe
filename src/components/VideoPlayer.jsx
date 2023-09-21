@@ -1,35 +1,26 @@
-import { useEffect, useRef } from 'react'
+import React from 'react'
+import YouTube, { YouTubeProps } from 'react-youtube'
 
 export default function VideoPlayer() {
-  const videoEl = useRef(null)
 
-  const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch((error) => {
-        console.error('Error attempting to play', error)
-      })
+  const onEnd = (event) => {
+    // Access the player instance
+    const player = event.target;
+
+    player.playVideo();
+
   }
 
-  useEffect(() => {
-    attemptPlay()
-  }, [])
-  return (
-    <>
-      <div className="App">
-        <div>
-          <video
-            style={{ maxWidth: '100%', width: '800px', margin: '0 auto' }}
-            playsInline
-            loop
-            muted
-            controls
-            alt="All the devices"
-            src={require('../videos/rickroll.mp4')}
-            ref={videoEl}
-          />
-        </div>
-      </div>
-    </>
-  )
+  const opts = {
+    height: '800',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      mute: 1,
+      loop: 1,
+    },
+  }
+
+  return <YouTube videoId="hgDUdTI8CVc" opts={opts} onEnd={onEnd} />
 }

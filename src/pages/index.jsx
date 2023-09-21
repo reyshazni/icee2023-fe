@@ -8,14 +8,14 @@ import { Hero } from '@/components/Hero'
 import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { About } from '@/components/About'
 import VideoPlayer from '@/components/VideoPlayer'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Pocket - Ini staging.</title>
+        <title>ICEE 2023</title>
         <meta
           name="description"
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
@@ -23,11 +23,10 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <Hero />
         <VideoPlayer />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
+        {/* <PrimaryFeatures /> */}
+        <About />
+        {/* <CallToAction /> */}
         <Reviews />
         <Pricing />
         <Faqs />

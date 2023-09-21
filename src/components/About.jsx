@@ -186,24 +186,27 @@ function DeviceChartIcon(props) {
   )
 }
 
-export function SecondaryFeatures() {
+export function About() {
   return (
     <section
       id="secondary-features"
       aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32"
+      className="relative py-20 min-h-[500px] sm:py-32 bg-[#232534]"
     >
+      <h1 className="absolute right-10 hidden font-sarmady font-semibold text-[#232534] md:top-[-24%] md:flex md:text-[150px] lg:top-[-42%] lg:flex lg:text-[240px]">
+        ICEE 2024
+      </h1>
       <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
-          </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+        <div className="mx-auto sm:text-center max-w-[80%] md:max-w-2xl lg:max-w-[100%]">
+          <p className="mt-2 font-montserrat text-center font-normal text-[28px] text-[#BEACB8]">
+            ITB Civil Engineering Expo (ICEE) is an annual event organized by
+            the <span className='font-bold'>Civil Engineering Student Association (Himpunan Mahasiswa Sipil
+            ITB)</span> which is present as a forum for collaboration for students in
+            developing themselves through various events that are integrated
+            with the technical issues raised
           </p>
         </div>
-        <ul
+        {/* <ul
           role="list"
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
         >
@@ -219,7 +222,7 @@ export function SecondaryFeatures() {
               <p className="mt-2 text-gray-700">{feature.description}</p>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </Container>
     </section>
   )

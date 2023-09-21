@@ -7,8 +7,5 @@ const nextConfig = {
     scrollRestoration: true,
   },
 }
-const withVideos = require('next-videos')
 
-module.exports = withVideos()
-
-module.exports = { ...withVideos(), ...nextConfig }
+module.exports = nextConfig
