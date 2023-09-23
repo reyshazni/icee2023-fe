@@ -49,23 +49,23 @@ function MobileNavLink({ children, ...props }) {
 
 export function Header() {
   return (
-    <header className="fixed z-[1000] w-full">
+    <header className="fixed z-[1000] w-full ">
       <nav>
         <div className="relative z-50 flex">
-          <div className="z-10 hidden items-center justify-between px-[80px] py-[40px] lg:flex lg:w-full">
+          <div className="z-10 hidden items-center justify-between px-[80px] py-[10px] lg:flex lg:w-full backdrop-blur bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)]">
             <a href="#">
-              <Image height={100} width={100} src={iceeLogo} alt="ICEE Logo" />
+              <Image height={80} width={80} src={iceeLogo} alt="ICEE Logo" />
             </a>
             <div className="hidden lg:flex lg:gap-[100px]">
               <NavLinks />
             </div>
           </div>
-          <div className="flex items-center gap-6 ">
+          <div className="lg:hidden w-full flex items-center gap-6 bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)]">
             <Popover className="lg:hidden">
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 bg-gray-200/50 hover:bg-gray-200/50 active:bg-[#FFFFFF] hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+                    className="relative z-10 m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:bg-[#FFFFFF] active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>

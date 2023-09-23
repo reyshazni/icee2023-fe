@@ -28,10 +28,21 @@ module.exports = {
         'spin-reverse': 'spin-reverse 1s linear infinite',
         'spin-reverse-slow': 'spin-reverse 4s linear infinite',
         'spin-reverse-slower': 'spin-reverse 6s linear infinite',
+        glow: 'glow 3s ease-in-out infinite',
       },
+      // backgroundImage : {
+      //   'stars':'url()'
+      // },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
+      },
+      height : {
+        'xl':'120px',
+        'l':'96px',
+        'm':'72px',
+        's':'48px',
+
       },
       colors: ({ colors }) => ({
         gray: colors.neutral,
@@ -41,6 +52,7 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
         sarmady: ['Sarmady', 'sans-serif'],
       },
+      // @keyframes glow{0%,60%{filter:brightness(100%)}30%{filter:brightness(150%)}}
       keyframes: {
         'fade-in': {
           from: {
@@ -59,6 +71,10 @@ module.exports = {
           to: {
             transform: 'rotate(-360deg)',
           },
+        },
+        glow: {
+          '0%, 100%': { filter: 'brightness(100%)', opacity: 0.3 },
+          '30%': { filter: 'brightness(150%)', opacity: 1 },
         },
       },
       maxWidth: {

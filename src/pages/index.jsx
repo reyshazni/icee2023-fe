@@ -10,6 +10,9 @@ import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { About } from '@/components/About'
 import VideoPlayer from '@/components/VideoPlayer'
+import Sponsors from '@/components/Sponsors'
+import Vision from '@/components/Vision'
+import Garis from '@/components/Garis'
 
 export default function Home() {
   return (
@@ -22,16 +25,20 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main>
+      <main className="relative bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)]">
+        <Garis className="absolute top-[40%] animate-glow " />
+
         <VideoPlayer />
+        {/* <div className='bg-[#004141] w-full h-10'></div> */}
         {/* <PrimaryFeatures /> */}
         <About />
+        <Vision />
         {/* <CallToAction /> */}
-        <Reviews />
-        <Pricing />
-        <Faqs />
+        <Sponsors />
+        {/* <Reviews />
+        <Faqs /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

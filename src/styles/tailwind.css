@@ -29,6 +29,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
 #__next {
   min-height: 100%;
 }

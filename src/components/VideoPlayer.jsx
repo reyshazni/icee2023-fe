@@ -44,7 +44,7 @@ export default function VideoPlayer() {
         allowFullScreen
       ></iframe> */}
       <video
-        className="w-[100vw]"
+        className="w-[100vw] bg-black"
         autoPlay
         muted
         loop

@@ -189,19 +189,23 @@ function DeviceChartIcon(props) {
 export function About() {
   return (
     <section
-      id="secondary-features"
+      id="about"
       aria-label="Features for building a portfolio"
-      className="relative py-20 min-h-[500px] sm:py-32 bg-[#232534]"
+      className="relative py-20 lg:h-[350px]"
     >
-      <h1 className="absolute right-10 hidden font-sarmady font-semibold text-[#232534] md:top-[-24%] md:flex md:text-[150px] lg:top-[-42%] lg:flex lg:text-[240px]">
+      <h1 className="absolute right-10 hidden font-sarmady font-semibold text-[#004141]  md:top-[-36%] md:flex md:text-[150px] lg:top-[-60%] lg:flex lg:text-[240px]">
         ICEE 2024
       </h1>
       <Container>
-        <div className="mx-auto sm:text-center max-w-[80%] md:max-w-2xl lg:max-w-[100%]">
-          <p className="mt-2 font-montserrat text-center font-normal text-[28px] text-[#BEACB8]">
+        <div className="mx-auto max-w-[80%] sm:text-center md:max-w-2xl lg:max-w-[100%]">
+          <p className="mt-2 text-center font-montserrat text-[12px] md:text-[20px] lg:text-[28px] font-normal text-[#FAFAFA]">
             ITB Civil Engineering Expo (ICEE) is an annual event organized by
-            the <span className='font-bold'>Civil Engineering Student Association (Himpunan Mahasiswa Sipil
-            ITB)</span> which is present as a forum for collaboration for students in
+            the{' '}
+            <span className="font-bold">
+              Civil Engineering Student Association (Himpunan Mahasiswa Sipil
+              ITB)
+            </span>{' '}
+            which is present as a forum for collaboration for students in
             developing themselves through various events that are integrated
             with the technical issues raised
           </p>
