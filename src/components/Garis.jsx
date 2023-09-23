@@ -27,8 +27,8 @@ export default function Garis({ ...props }) {
           y2="551.995"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FAFAFA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#FAFAFA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_178_611"
@@ -38,8 +38,8 @@ export default function Garis({ ...props }) {
           y2="682.562"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FAFAFA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#FAFAFA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
     </svg>
