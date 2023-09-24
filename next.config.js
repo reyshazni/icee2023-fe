@@ -28,7 +28,9 @@ const nextConfig = {
     ],
   },
   env: {
-    BE_STAGING : "https://be-staging-s3ey3nqirq-et.a.run.app/asset/url-sponsor"
+    BE_STAGING_SPONSOR_URL : "https://be-staging-s3ey3nqirq-et.a.run.app/asset/url-sponsor",
+    BE_STAGING_MEDPAR_URL : "https://be-staging-s3ey3nqirq-et.a.run.app/asset/url-media"
+
   }
 
 }

@@ -65,7 +65,7 @@ const Card = ({ children1, children2 }) => {
 
 export default function Vision() {
   return (
-    <div className="flex flex-col items-center justify-center px-[100px]">
+    <div className="flex flex-col items-center justify-center px-[100px] mb-[100px] lg:mb-[200px]">
       <div className="flex h-[145px] lg:h-[200px]">
         <div className="relative flex h-[100%] w-[100px] items-start justify-center lg:w-[200px]">
           <h1 className="absolute font-sarmady text-[60px] font-semibold leading-[100px] text-[#FAFAFA] lg:text-[120px]">

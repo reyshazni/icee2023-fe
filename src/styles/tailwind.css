@@ -25,6 +25,11 @@
   src: url('/fonts/Sarmady.ttf');
 }
 
+@font-face {
+  font-family: 'Adam';
+  src: url('/fonts/Adam.ttf');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

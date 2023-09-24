@@ -198,7 +198,7 @@ export function About() {
       </h1>
       <Container>
         <div className="mx-auto max-w-[80%] sm:text-center md:max-w-2xl lg:max-w-[100%]">
-          <p className="mt-2 text-center font-montserrat text-[12px] md:text-[20px] lg:text-[28px] font-normal text-[#FAFAFA]">
+          <p className="mt-2 text-center font-montserrat text-[14px] md:text-[20px] lg:text-[28px] font-normal text-[#FAFAFA]">
             ITB Civil Engineering Expo (ICEE) is an annual event organized by
             the{' '}
             <span className="font-bold">
@@ -210,23 +210,6 @@ export function About() {
             with the technical issues raised
           </p>
         </div>
-        {/* <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
-        >
-          {features.map((feature) => (
-            <li
-              key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
-            >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
-                {feature.name}
-              </h3>
-              <p className="mt-2 text-gray-700">{feature.description}</p>
-            </li>
-          ))}
-        </ul> */}
       </Container>
     </section>
   )

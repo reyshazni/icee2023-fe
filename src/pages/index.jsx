@@ -13,6 +13,8 @@ import VideoPlayer from '@/components/VideoPlayer'
 import Sponsors from '@/components/Sponsors'
 import Vision from '@/components/Vision'
 import Garis from '@/components/Garis'
+import Competition from '@/components/Competition'
+import SlideFromLeft from '@/components/Animations/SlideFromLeft'
 
 export default function Home() {
   return (
@@ -33,8 +35,18 @@ export default function Home() {
         {/* <PrimaryFeatures /> */}
         <About />
         <Vision />
-        {/* <CallToAction /> */}
-        <Sponsors />
+        <Competition />
+
+        <Sponsors
+          title={'Our Sponsors'}
+          url={process.env.BE_STAGING_SPONSOR_URL}
+        />
+
+        <Sponsors
+          title={'Our Media Partners'}
+          url={process.env.BE_STAGING_MEDPAR_URL}
+        />
+
         {/* <Reviews />
         <Faqs /> */}
       </main>

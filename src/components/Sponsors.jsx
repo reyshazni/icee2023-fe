@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-export default function Sponsors() {
+export default function Sponsors({title,url}) {
   const [xlSponsor, setXlSponsor] = useState([])
   const [lSponsor, setLSponsor] = useState([])
 
@@ -11,7 +11,7 @@ export default function Sponsors() {
 
   useEffect(() => {
     // Define the URL to fetch data from
-    const apiUrl = process.env.BE_STAGING
+    const apiUrl = url
 
     const listXL = []
     const listL = []
@@ -59,8 +59,8 @@ export default function Sponsors() {
       aria-label="Features for building a portfolio"
       className="my-[100px] flex flex-col items-center justify-center pb-[100px]"
     >
-      <h1 className="font-sarmady text-[120px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)]">
-        Our Sponsors
+      <h1 className="font-sarmady text-[60px] lg:text-[120px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)]">
+        {title}
       </h1>
       <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FAFAFA] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
