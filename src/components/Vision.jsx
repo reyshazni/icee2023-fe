@@ -42,7 +42,7 @@ const Card = ({ children1, children2 }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="h-full"
+            className="h-full flex flex-col"
           >
             {children1}
           </motion.div>
@@ -96,7 +96,7 @@ export default function Vision() {
           }
           children2={
             <>
-              <p className="font-montserrat text-[18px] lg:text-[1.6vw] font-bold text-[#FAFAFA]">
+              <p className="font-montserrat text-[18px] lg:text-[1.5vw] font-bold text-[#FAFAFA]">
                 LEARN is a cognitive process of acquiring new knowledge, skills,
                 or understanding, facilitating personal and professional growth.
               </p>
@@ -110,7 +110,7 @@ export default function Vision() {
           children1={
             <>
               <Image src={InnovateImg} />
-              <span className="px-[25px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
+              <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                 #2
               </span>
               <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#C8EBE2] lg:text-[6vw]">
@@ -120,7 +120,7 @@ export default function Vision() {
           }
           children2={
             <>
-              <p className="font-montserrat text-[18px] lg:text-[1.6vw] font-bold text-[#C8EBE2]">
+              <p className="font-montserrat text-[18px] lg:text-[1.5vw] font-bold text-[#C8EBE2]">
                 INNOVATE is to creatively introduce novel ideas, methods, or
                 technologies, fostering positive change and advancement within
                 an organization or industry.
@@ -135,7 +135,7 @@ export default function Vision() {
           children1={
             <>
               <Image src={ContributeImg} />
-              <span className="px-[25px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
+              <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                 #3
               </span>
               <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#BEACB8] lg:text-[6vw]">
@@ -145,7 +145,7 @@ export default function Vision() {
           }
           children2={
             <>
-              <p className="font-montserrat text-[18px] lg:text-[1.6vw] font-bold text-[#BEACB8]">
+              <p className="font-montserrat text-[18px] lg:text-[1.5vw] font-bold text-[#BEACB8]">
                 CONTRIBUTE means actively and purposefully provide valuable
                 input, resources, or effort toward a particular goal or cause,
                 with the intention of enhancing its success or impact.

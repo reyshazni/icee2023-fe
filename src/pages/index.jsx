@@ -15,6 +15,7 @@ import Vision from '@/components/Vision'
 import Garis from '@/components/Garis'
 import Competition from '@/components/Competition'
 import SlideFromLeft from '@/components/Animations/SlideFromLeft'
+import PastEvents from '@/components/PastEvents'
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main className="relative bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)]">
+      <main className="relative bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)] overflow-hidden">
         <Garis className="absolute top-[40%] animate-glow " />
 
         <VideoPlayer />
@@ -36,6 +37,12 @@ export default function Home() {
         <About />
         <Vision />
         <Competition />
+
+        <section className=''>
+
+        </section>
+
+        <PastEvents />
 
         <Sponsors
           title={'Our Sponsors'}

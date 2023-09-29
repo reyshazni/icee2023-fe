@@ -1,12 +1,10 @@
 import { motion, useAnimation } from 'framer-motion'
-import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
 
 export default function SlideFromRight({ children }) {
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
-      x: 100,
+      x: 200,
     },
     animate: {
       opacity: 1,
@@ -20,7 +18,6 @@ export default function SlideFromRight({ children }) {
   }
 
   return (
-
     <motion.div
       variants={fadeInAnimationVariants}
       initial="initial"
