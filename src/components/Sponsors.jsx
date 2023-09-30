@@ -92,7 +92,6 @@ export default function Sponsors({title,url}) {
           ))}
         </div>
       </div>
-      {/* <div className="w-[300px] h-[300px] bg-purple-400 animate-[glow_2s_ease-in-out_infinite]"></div> */}
     </section>
   )
 }

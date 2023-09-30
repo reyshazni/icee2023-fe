@@ -66,9 +66,9 @@ export default function Competition() {
   return (
     <section
       id="competition"
-      className="flex flex-col items-center gap-[50px] px-[100px]"
+      className="flex flex-col items-center gap-[50px] px-[100px] mb-[50px] lg:mb-[200px]"
     >
-      <div className="w-[100%] text-center lg:text-start">
+      <div className="">
         <h1 className="font-sarmady text-[60px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] lg:text-[120px]">
           Competition
         </h1>
