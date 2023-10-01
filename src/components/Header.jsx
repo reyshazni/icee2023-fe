@@ -52,7 +52,7 @@ export function Header() {
     <header className="fixed z-[1000] w-full ">
       <nav>
         <div className="relative z-50 flex">
-          <div className="z-10 hidden items-center justify-between px-[80px] py-[10px] lg:flex lg:w-full backdrop-blur bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)]">
+          <div className="z-10 hidden items-center justify-between bg-[rgba(200,235,226,0.50)] px-[80px] py-[10px] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)] backdrop-blur lg:flex lg:w-full">
             <a href="#">
               <Image height={80} width={80} src={iceeLogo} alt="ICEE Logo" />
             </a>
@@ -60,7 +60,10 @@ export function Header() {
               <NavLinks />
             </div>
           </div>
-          <div className="lg:hidden w-full flex items-center gap-6 bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)]">
+          <div className="flex w-full items-center justify-between bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)] lg:hidden">
+            <Link href="/" className="m-2 flex p-2 lg:hidden">
+              <Image height={40} width={40} src={iceeLogo} alt="ICEE Logo" />
+            </Link>
             <Popover className="lg:hidden">
               {({ open }) => (
                 <>
