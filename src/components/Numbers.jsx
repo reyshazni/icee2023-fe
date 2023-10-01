@@ -74,7 +74,7 @@ const Number = ({ num, duration, text, isPlus }) => {
 export default function Numbers() {
   return (
     <section className="flex flex-col items-center">
-      <h1 className="relative mb-[25px] text-center font-sarmady text-[60px] font-semibold italic text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(190_172_184)] lg:text-[120px]">
+      <h1 className="relative mb-[25px] text-center font-sarmady text-[30px] md:text-[60px] font-semibold italic text-[#FAFAFA] [text-shadow:_2px_2px_0_rgb(190_172_184)] lg:[text-shadow:_4px_4px_0_rgb(190_172_184)] lg:text-[120px]">
         ICEE in Numbers
       </h1>
       <div className="flex w-[80vw] flex-col gap-[40px] md:w-[60vw] lg:w-[80vw] lg:gap-[80px]">
