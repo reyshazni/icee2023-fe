@@ -59,7 +59,7 @@ export default function Sponsors({title,url}) {
       aria-label="Features for building a portfolio"
       className="my-[100px] flex flex-col items-center justify-center pb-[100px]"
     >
-      <h1 className="font-sarmady text-[60px] lg:text-[120px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)]">
+      <h1 className="font-sarmady text-center text-[40px] lg:text-[120px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)]">
         {title}
       </h1>
       <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FAFAFA] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">

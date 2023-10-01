@@ -4,7 +4,7 @@ export default function SlideFromRight({ children }) {
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
-      x: 200,
+      x: 100,
     },
     animate: {
       opacity: 1,

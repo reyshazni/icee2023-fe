@@ -198,7 +198,7 @@ export function About() {
       <h1 className="absolute right-10 hidden font-sarmady font-semibold text-[#004141]  md:top-[-36%] md:flex md:text-[150px] lg:top-[-60%] lg:flex lg:text-[240px]">
         ICEE 2024
       </h1>
-      <FadeIn duration={6}>
+      <FadeIn duration={3}>
         <Container>
           <div className="mx-auto max-w-[80%] sm:text-center md:max-w-2xl lg:max-w-[100%]">
             <p className="mt-2 text-center font-montserrat text-[14px] font-normal text-[#FAFAFA] md:text-[20px] lg:text-[28px]">
