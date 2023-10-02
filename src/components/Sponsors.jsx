@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import SlideFromLeft from './Animations/SlideFromLeft'
+import FadeIn from './Animations/FadeIn'
 
-export default function Sponsors({title,url}) {
+export default function Sponsors({ title, url }) {
   const [xlSponsor, setXlSponsor] = useState([])
   const [lSponsor, setLSponsor] = useState([])
 
@@ -59,36 +61,60 @@ export default function Sponsors({title,url}) {
       aria-label="Features for building a portfolio"
       className="my-[100px] flex flex-col items-center justify-center pb-[100px]"
     >
-      <h1 className="font-sarmady text-center text-[40px] lg:text-[120px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)]">
+      <h1 className="text-center font-sarmady text-[40px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] lg:text-[120px]">
         {title}
       </h1>
       <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FAFAFA] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {xlSponsor.map((sponsor, index) => (
-            <div key={index}>
-              <img className="h-xl" src={sponsor.file_url} alt={sponsor.name} />
-            </div>
+            <SlideFromLeft duration={3 + index}>
+              <div key={index}>
+                <img
+                  className="h-xl"
+                  src={sponsor.file_url}
+                  alt={sponsor.name}
+                />
+              </div>
+            </SlideFromLeft>
           ))}
         </div>
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {lSponsor.map((sponsor, index) => (
-            <div key={index}>
-              <img className="h-l" src={sponsor.file_url} alt={sponsor.name} />
-            </div>
+            <SlideFromLeft duration={3 + index}>
+              <div key={index}>
+                <img
+                  className="h-l"
+                  src={sponsor.file_url}
+                  alt={sponsor.name}
+                />
+              </div>
+            </SlideFromLeft>
           ))}
         </div>
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {mSponsor.map((sponsor, index) => (
-            <div key={index}>
-              <img className="h-m" src={sponsor.file_url} alt={sponsor.name} />
-            </div>
+            <SlideFromLeft duration={3 + index}>
+              <div key={index}>
+                <img
+                  className="h-m"
+                  src={sponsor.file_url}
+                  alt={sponsor.name}
+                />
+              </div>
+            </SlideFromLeft>
           ))}
         </div>
         <div className="flex items-center justify-center gap-[20px]">
           {sSponsor.map((sponsor, index) => (
-            <div key={index}>
-              <img className="h-s" src={sponsor.file_url} alt={sponsor.name} />
-            </div>
+            <SlideFromLeft duration={3 + index}>
+              <div key={index}>
+                <img
+                  className="h-s"
+                  src={sponsor.file_url}
+                  alt={sponsor.name}
+                />
+              </div>
+            </SlideFromLeft>
           ))}
         </div>
       </div>

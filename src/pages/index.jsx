@@ -20,6 +20,7 @@ import Events from '@/components/Events'
 import Numbers from '@/components/Numbers'
 import FadeIn from '@/components/Animations/FadeIn'
 import ScaleUp from '@/components/Animations/ScaleUp'
+import EventCarousel from '@/components/EventCarousel'
 
 export default function Home() {
   return (
@@ -44,6 +45,8 @@ export default function Home() {
         <About />
         <Vision />
         <Competition />
+
+        <EventCarousel />
 
         <Events />
 

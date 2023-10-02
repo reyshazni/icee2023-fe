@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion'
 
-export default function SlideFromLeft({ children }) {
+export default function SlideFromLeft({ children, duration }) {
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
@@ -11,7 +11,7 @@ export default function SlideFromLeft({ children }) {
       x: 0,
       transition: {
         type: 'spring',
-        duration: 1,
+        duration: duration ?? 1,
         bounce: 0.3,
       },
     },

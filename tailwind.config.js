@@ -30,6 +30,7 @@ module.exports = {
         'spin-reverse-slower': 'spin-reverse 6s linear infinite',
         glow: 'glow 3s ease-in-out infinite',
         glowItem: 'glowItem 5s ease-in-out infinite',
+        glowBullet: 'glowBullet 2s ease-in-out infinite',
       },
       // backgroundImage : {
       //   'stars':'url()'
@@ -80,6 +81,10 @@ module.exports = {
         glowItem: {
           '0%, 100%': { filter: 'brightness(100%)' },
           '30%': { filter: 'brightness(115%)' },
+        },
+        glowBullet: {
+          '0%, 100%': { opacity: 0.5 },
+          '30%': { opacity: 1 },
         },
       },
       maxWidth: {
