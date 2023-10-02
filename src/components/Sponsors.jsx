@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import SlideFromLeft from './Animations/SlideFromLeft'
-import FadeIn from './Animations/FadeIn'
+
 
 export default function Sponsors({ title, url }) {
   const [xlSponsor, setXlSponsor] = useState([])
@@ -67,7 +65,6 @@ export default function Sponsors({ title, url }) {
       <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FAFAFA] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {xlSponsor.map((sponsor, index) => (
-            <SlideFromLeft duration={3 + index}>
               <div key={index}>
                 <img
                   className="h-xl"
@@ -75,12 +72,10 @@ export default function Sponsors({ title, url }) {
                   alt={sponsor.name}
                 />
               </div>
-            </SlideFromLeft>
           ))}
         </div>
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {lSponsor.map((sponsor, index) => (
-            <SlideFromLeft duration={3 + index}>
               <div key={index}>
                 <img
                   className="h-l"
@@ -88,12 +83,10 @@ export default function Sponsors({ title, url }) {
                   alt={sponsor.name}
                 />
               </div>
-            </SlideFromLeft>
           ))}
         </div>
         <div className="mb-[20px] flex items-center justify-center gap-[20px]">
           {mSponsor.map((sponsor, index) => (
-            <SlideFromLeft duration={3 + index}>
               <div key={index}>
                 <img
                   className="h-m"
@@ -101,12 +94,10 @@ export default function Sponsors({ title, url }) {
                   alt={sponsor.name}
                 />
               </div>
-            </SlideFromLeft>
           ))}
         </div>
         <div className="flex items-center justify-center gap-[20px]">
           {sSponsor.map((sponsor, index) => (
-            <SlideFromLeft duration={3 + index}>
               <div key={index}>
                 <img
                   className="h-s"
@@ -114,7 +105,6 @@ export default function Sponsors({ title, url }) {
                   alt={sponsor.name}
                 />
               </div>
-            </SlideFromLeft>
           ))}
         </div>
       </div>

@@ -89,7 +89,7 @@ export const Card = React.memo(function (props) {
       >
         <div className="event-card m-auto flex h-[300px] w-[60%] select-none flex-col items-center justify-center gap-[15px] rounded-[8px] border-[1px] border-[#FAFAFA] bg-[#1B4141] px-[20px] md:h-[600px] md:w-[100%] md:gap-[25px] lg:h-[600px] lg:w-[100%] lg:gap-[25px]">
           <div className="w-[60px] md:w-max lg:w-max">
-            <Image src={carouselData[dataIndex].img} draggable={false} />
+            <Image src={carouselData[dataIndex].img} draggable={false} alt={carouselData[dataIndex].title}/>
           </div>
           <h1 className="text-center font-adam text-[24px] font-semibold text-[#FAFAFA] md:text-[40px] lg:text-[40px] lg:leading-[45px]">
             {carouselData[dataIndex].title}
@@ -107,3 +107,5 @@ export const Card = React.memo(function (props) {
     </ScaleUp>
   )
 })
+
+Card.displayName = "EventCard"
