@@ -96,7 +96,7 @@ export default function Vision() {
           <Card
             children1={
               <>
-                <Image src={LearnImg} />
+                <Image src={LearnImg} alt='LEARN' />
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #1
                 </span>
@@ -123,7 +123,7 @@ export default function Vision() {
           <Card
             children1={
               <>
-                <Image src={InnovateImg} />
+                <Image src={InnovateImg} alt='INNOVATE'/>
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #2
                 </span>
@@ -151,7 +151,7 @@ export default function Vision() {
           <Card
             children1={
               <>
-                <Image src={ContributeImg} />
+                <Image src={ContributeImg} alt='CONTRIBUTE' />
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #3
                 </span>
