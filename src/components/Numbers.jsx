@@ -1,7 +1,9 @@
+'use client'
+
+
 import CountUp from 'react-countup'
 import React, { useRef, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import FadeIn from './Animations/FadeIn'
 
 const CountUpAnimation = ({ num, duration, text, isPlus }) => {
   const [isInView, setIsInView] = useState(false)
