@@ -3,16 +3,13 @@ import YouTube, { YouTubeProps } from 'react-youtube'
 
 export default function VideoPlayer() {
   const onEnd = (event) => {
-    // Access the player instance
     const player = event.target
 
     player.playVideo()
   }
 
   const opts = {
-    // width: '100%',
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
       mute: 1,
       loop: 1,
@@ -36,13 +33,6 @@ export default function VideoPlayer() {
 
   return (
     <>
-      {/* <YouTube videoId="hgDUdTI8CVc" opts={opts} onEnd={onEnd} /> */}
-      {/* <iframe
-        className="h-[100%] w-[100%]"
-        src="https://www.youtube.com/embed/hgDUdTI8CVc?controls=0&rel=0&autoplay=1&rel=0&loop=1&playlist=hgDUdTI8CVc&mute=1"
-        frameBorder="0"
-        allowFullScreen
-      ></iframe> */}
       <video
         className="w-[100vw] bg-black"
         autoPlay

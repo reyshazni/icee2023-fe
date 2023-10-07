@@ -8,6 +8,8 @@ import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import iceeLogo from 'src/images/logos/icee_logo.svg'
 import Image from 'next/image'
+import { useInView } from "react-intersection-observer";
+
 
 function MenuIcon(props) {
   return (
