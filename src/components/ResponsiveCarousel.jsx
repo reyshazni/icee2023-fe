@@ -37,7 +37,7 @@ export default function ResponsiveCarousel() {
     ref.current.goNext()
   }
 
-  const autoplayInterval = 3000
+  const autoplayInterval = 6000
 
   React.useEffect(() => {
     const autoplayTimer = setInterval(goToNextSlide, autoplayInterval)

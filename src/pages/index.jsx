@@ -5,12 +5,20 @@ import { About } from '@/components/About'
 import VideoPlayer from '@/components/VideoPlayer'
 import Sponsors from '@/components/Sponsors'
 import Vision from '@/components/Vision'
-import Garis from '@/components/Garis'
+import Garis from '@/components/Background/Garis'
 import Competition from '@/components/Competition'
 import Events from '@/components/Events'
 import Numbers from '@/components/Numbers'
 import FadeIn from '@/components/Animations/FadeIn'
 import EventCarousel from '@/components/EventCarousel'
+import WigglyLine from '@/components/Background/WigglyLine'
+import WigglyLine2 from '@/components/Background/WigglyLine2'
+import EventLine from '@/components/Background/EventLine'
+import PastEventLine from '@/components/Background/PastEventLine'
+import NumberLine from '@/components/Background/NumberLine'
+import SponsorLine from '@/components/Background/SponsorLine'
+import SponsorLine2 from '@/components/Background/SponsorLine2'
+import PartnerLine from '@/components/Background/PartnerLine'
 
 export default function Home() {
   return (
@@ -24,14 +32,24 @@ export default function Home() {
       </Head>
       <Header />
       <main className="relative overflow-hidden bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)]">
-        <Garis className="absolute top-[40%] animate-glow " />
+        
+        {/* BACKGROUND SVGs */}
+        <Garis className="absolute top-[20%] animate-glow " />
+        <WigglyLine className="absolute top-[30%] right-0 animate-glow " />
+        <WigglyLine2 className="absolute top-[30%] right-0 animate-glow " />
+        <EventLine className="absolute top-[44%] right-0 animate-glow"/>
+        <PastEventLine className="absolute top-[55%] animate-glow"/>
+        <NumberLine className="absolute top-[70%] right-0 animate-glow"/>
+        <SponsorLine className="absolute top-[80%] animate-glow"/>
+        <SponsorLine2 className="absolute top-[80%] animate-glow"/>
+        <PartnerLine className="absolute top-[90%] right-0 animate-glow"/>
+
+
+
 
         <FadeIn duration={6}>
           <VideoPlayer />
         </FadeIn>
-
-        {/* <div className='bg-[#004141] w-full h-10'></div> */}
-        {/* <PrimaryFeatures /> */}
         <About />
         <Vision />
         <Competition />
@@ -51,9 +69,6 @@ export default function Home() {
           title={'Our Media Partners'}
           url={process.env.BE_STAGING_MEDPAR_URL}
         />
-
-        {/* <Reviews />
-        <Faqs /> */}
       </main>
       <Footer />
     </>
