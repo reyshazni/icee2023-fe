@@ -97,8 +97,8 @@ export const Card = React.memo(function (props) {
           <p className="text-center font-montserrat text-[8px] text-[#FAFAFA] md:text-[16px] lg:text-[16px]">
             {carouselData[dataIndex].desc}
           </p>
-          <button className="w-[100px] rounded-[32px] bg-[#BEACB8] py-[7.5px] md:w-[200px] md:py-[15px] lg:w-[200px] lg:py-[15px]">
-            <p className="text-center font-adam text-[12px] font-bold md:text-[18px] lg:text-[18px]">
+          <button className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[15px] lg:w-[200px] lg:py-[15px]">
+            <p className="text-center font-adam text-[12px] font-extrabold md:text-[18px] lg:text-[18px]">
               Register
             </p>
           </button>

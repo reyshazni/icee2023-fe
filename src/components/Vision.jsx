@@ -7,8 +7,9 @@ import ContributeImg from '../images/contribute.png'
 import SlideFromLeft from './Animations/SlideFromLeft'
 import SlideFromRight from './Animations/SlideFromRight'
 import FadeIn from './Animations/FadeIn'
+import clsx from 'clsx'
 
-const Card = ({ children1, children2 }) => {
+const Card = ({ children1, children2, borderColor }) => {
   const [showTitle, setShowTitle] = useState(true)
 
   useEffect(() => {
@@ -33,7 +34,10 @@ const Card = ({ children1, children2 }) => {
 
   return (
     <div
-      className="h-[300px] w-[300px] overflow-hidden rounded-[8px] bg-[#004141] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] sm:mb-[25px] md:mb-[25px] lg:h-[380px] lg:w-[25vw]"
+      className={clsx(
+        'h-[300px] w-[300px] overflow-hidden rounded-[8px] border-[1px] bg-[#004141] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] sm:mb-[25px] md:mb-[25px] lg:h-[380px] lg:w-[25vw]',
+        `border-[${borderColor}]`
+      )}
       onMouseEnter={() => setShowTitle(false)}
       onMouseLeave={() => setShowTitle(true)}
     >
@@ -94,9 +98,10 @@ export default function Vision() {
       <div className="z-[10] flex min-h-[950px] w-[100%] flex-col items-center justify-between md:min-h-min lg:mt-[50px] lg:min-h-min lg:flex-row">
         <FadeIn duration={3}>
           <Card
+            borderColor={'#FAFAFA'}
             children1={
               <>
-                <Image src={LearnImg} alt='LEARN' />
+                <Image src={LearnImg} alt="LEARN" />
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #1
                 </span>
@@ -121,9 +126,10 @@ export default function Vision() {
         </FadeIn>
         <FadeIn duration={6}>
           <Card
+            borderColor={'#C8EBE2'}
             children1={
               <>
-                <Image src={InnovateImg} alt='INNOVATE'/>
+                <Image src={InnovateImg} alt="INNOVATE" />
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #2
                 </span>
@@ -149,20 +155,21 @@ export default function Vision() {
 
         <FadeIn duration={10}>
           <Card
+            borderColor={'#FFC892'}
             children1={
               <>
-                <Image src={ContributeImg} alt='CONTRIBUTE' />
+                <Image src={ContributeImg} alt="CONTRIBUTE" />
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #3
                 </span>
-                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#BEACB8] lg:text-[6vw]">
+                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#FFC892] lg:text-[6vw]">
                   Contribute
                 </h1>
               </>
             }
             children2={
               <>
-                <p className="font-montserrat text-[18px] font-bold text-[#BEACB8] lg:text-[1.5vw]">
+                <p className="font-montserrat text-[18px] font-bold text-[#FFC892] lg:text-[1.5vw]">
                   CONTRIBUTE means actively and purposefully provide valuable
                   input, resources, or effort toward a particular goal or cause,
                   with the intention of enhancing its success or impact.
