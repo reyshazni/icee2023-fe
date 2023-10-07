@@ -33,7 +33,7 @@ export default function CountUpAnimation({ num, duration, text, isPlus, key }) {
               ref={countUpRef}
               className="font-sarmady text-[60px] font-semibold leading-[50px] text-[#FAFAFA] lg:text-[120px] lg:leading-[100px]"
             >
-              {startAnimation ? start() : null}
+              {startAnimation ? start() : start()}
             </span>
           )}
         </CountUp>
