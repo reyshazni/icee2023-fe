@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 
-export default function CountUpAnimation({ num, duration, text, isPlus, key }) {
+export default function CountUpAnimation({ num, duration, text, isPlus }) {
   const [isInView, setIsInView] = useState(false)
   const [startAnimation, setStartAnimation] = useState(false)
 
@@ -19,8 +19,8 @@ export default function CountUpAnimation({ num, duration, text, isPlus, key }) {
   }, [inView, startAnimation])
 
   return (
-    <div className="flex flex-col items-center" ref={ref} key={key}>
-      {isInView && (
+    <div className="flex flex-col items-center" ref={ref}>
+      {
         <CountUp
           start={0}
           end={num}
@@ -33,11 +33,11 @@ export default function CountUpAnimation({ num, duration, text, isPlus, key }) {
               ref={countUpRef}
               className="font-sarmady text-[60px] font-semibold leading-[50px] text-[#FAFAFA] lg:text-[120px] lg:leading-[100px]"
             >
-              {startAnimation ? start() : start()}
+              {startAnimation ? start() : null}
             </span>
           )}
         </CountUp>
-      )}
+      }
       <div className="rounded-[64px] bg-[#C8EBE2] px-[20px] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)]">
         <h2 className="text-center font-sarmady text-[11px] font-semibold text-[#005453] md:text-[14px] lg:text-[36px] lg:leading-[48px]">
           {text}

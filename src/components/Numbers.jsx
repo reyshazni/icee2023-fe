@@ -1,4 +1,4 @@
-import CountUpAnimation from "./Animations/CountUpAnimation";
+import CountUpAnimation from './Animations/CountUpAnimation'
 
 export default function Numbers() {
   return (
@@ -8,7 +8,6 @@ export default function Numbers() {
       </h1>
       <div className="flex w-[80vw] flex-col gap-[40px] md:w-[60vw] lg:w-[80vw] lg:gap-[80px]">
         <CountUpAnimation
-          key={'paricipants'}
           num={9000}
           duration={5}
           text={'Total Participants'}
@@ -16,14 +15,12 @@ export default function Numbers() {
         />
         <div className="flex w-full justify-between">
           <CountUpAnimation
-            key={'workshop'}
             num={1800}
             duration={3}
             text={'Workshop Participants'}
             isPlus={true}
           />
           <CountUpAnimation
-            key={'expo'}
             num={4372}
             duration={4}
             text={'Expo Participants'}
@@ -32,7 +29,6 @@ export default function Numbers() {
         </div>
 
         <CountUpAnimation
-          key={'group'}
           num={495}
           duration={2}
           text={'Group Participants'}
@@ -40,14 +36,12 @@ export default function Numbers() {
         />
         <div className="flex w-full justify-between">
           <CountUpAnimation
-            key={'seminar'}
             num={2095}
             duration={3}
             text={'National Seminar Participants'}
             isPlus={false}
           />
           <CountUpAnimation
-            key={'conference'}
             num={300}
             duration={2}
             text={'Conference Participants'}
