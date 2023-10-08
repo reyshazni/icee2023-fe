@@ -8,7 +8,7 @@ export default function OnConstruction() {
   return (
     <>
       <Head>
-        <title>🚧Under Construction</title>
+        <title>🚧Under Construction 🚧</title>
       </Head>
       <Header />
       <main className="relative flex h-full flex-col items-center justify-center overflow-hidden bg-[#FFC892] bg-[url(../images/backgrounds/stars-pattern.svg)]">

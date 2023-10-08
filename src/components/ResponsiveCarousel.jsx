@@ -7,6 +7,7 @@ import {
 import Image from 'next/image'
 import ScaleUp from './Animations/ScaleUp'
 import { carouselData } from '@/constants/event_carousel'
+import { useRouter } from 'next/router'
 
 function Pagination(props) {
   return (
@@ -80,6 +81,7 @@ export default function ResponsiveCarousel() {
 // If you want the absolute best performance then pass in a custom comparator function like below
 export const Card = React.memo(function (props) {
   const { data, dataIndex } = props
+  const router = useRouter()
 
   return (
     <ScaleUp duration={dataIndex === 0 ? 0.7 : dataIndex * 0.9}>
@@ -89,7 +91,11 @@ export const Card = React.memo(function (props) {
       >
         <div className="event-card m-auto flex h-[300px] w-[60%] select-none flex-col items-center justify-center gap-[15px] rounded-[8px] border-[1px] border-[#FAFAFA] bg-[#1B4141] px-[20px] md:h-[600px] md:w-[100%] md:gap-[25px] lg:h-[600px] lg:w-[100%] lg:gap-[25px]">
           <div className="w-[60px] md:w-max lg:w-max">
-            <Image src={carouselData[dataIndex].img} draggable={false} alt={carouselData[dataIndex].title}/>
+            <Image
+              src={carouselData[dataIndex].img}
+              draggable={false}
+              alt={carouselData[dataIndex].title}
+            />
           </div>
           <h1 className="text-center font-adam text-[24px] font-semibold text-[#FAFAFA] md:text-[40px] lg:text-[40px] lg:leading-[45px]">
             {carouselData[dataIndex].title}
@@ -97,7 +103,12 @@ export const Card = React.memo(function (props) {
           <p className="text-center font-montserrat text-[8px] text-[#FAFAFA] md:text-[16px] lg:text-[16px]">
             {carouselData[dataIndex].desc}
           </p>
-          <button className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[15px] lg:w-[200px] lg:py-[15px]">
+          <button
+            onClick={() => {
+              router.push('/register')
+            }}
+            className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[15px] lg:w-[200px] lg:py-[15px]"
+          >
             <p className="text-center font-adam text-[12px] font-extrabold md:text-[18px] lg:text-[18px]">
               Register
             </p>
@@ -108,4 +119,4 @@ export const Card = React.memo(function (props) {
   )
 })
 
-Card.displayName = "EventCard"
+Card.displayName = 'EventCard'
