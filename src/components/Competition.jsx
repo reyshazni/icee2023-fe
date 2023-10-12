@@ -10,21 +10,23 @@ function CompCard({ type, icon, title, subtitle, desc }) {
     case 'left':
       return (
         <div className="flex w-[300px] md:w-[400px] lg:w-[85vw] lg:justify-between lg:border-b-[5px] lg:border-b-[#C8EBE2]">
-          <div className="flex h-[150px] bg-[#C8EBE2] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] lg:w-[150px]">
-            <Image src={icon} height={200} width={200} />
+          <div className="flex h-[100px] min-w-[100px] items-center justify-center bg-[#C8EBE2] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] lg:h-[150px] lg:w-[150px] ">
+            <div className="h-[66px] w-[66px] lg:h-[100px] lg:w-[100px]">
+              <Image src={icon} height={200} width={200} />
+            </div>
           </div>
           <div className="flex w-[85%] flex-col justify-between lg:flex-row lg:items-center">
             <div className="ml-[8px] flex flex-col items-start justify-between">
-              <h1 className="font-adam text-[30px] font-bold text-[#FAFAFA] lg:text-[60px]">
+              <h1 className="font-adam text-[30px] font-bold leading-[30px] text-[#FAFAFA] lg:text-[60px] lg:leading-normal">
                 {title}
               </h1>
-              <h2 className="font-adam text-[12px] font-bold text-[#FAFAFA] lg:text-[20px] ">
+              <h2 className="font-adam text-[10px] font-bold text-[#FAFAFA] lg:text-[20px] ">
                 {subtitle}
               </h2>
             </div>
-            <span className="flex h-[2.5px] w-full rounded bg-[#C8EBE2] lg:hidden" />
+            <span className="mb-[3px] flex h-[2.5px] w-full rounded bg-[#C8EBE2] lg:my-0 lg:hidden" />
             <div className="ml-[8px] lg:w-[55%]">
-              <p className="font-montserrat text-[8px] md:text-[10px] text-[#FAFAFA] lg:text-end lg:text-[18px]">
+              <p className="font-montserrat text-[8px] text-[#FAFAFA] md:text-[10px] lg:text-end lg:text-[18px]">
                 {desc}
               </p>
             </div>
@@ -37,23 +39,25 @@ function CompCard({ type, icon, title, subtitle, desc }) {
         <div className="flex w-[300px] md:w-[400px] lg:w-[85vw] lg:justify-between lg:border-b-[5px] lg:border-b-[#C8EBE2]">
           <div className="flex w-[85%] flex-col-reverse justify-between lg:flex-row lg:items-center ">
             <div className="mr-[8px] lg:w-[55%]">
-              <p className="text-end font-montserrat text-[8px] md:text-[10px] text-[#FAFAFA] lg:text-start lg:text-[18px]">
+              <p className="text-end font-montserrat text-[8px] text-[#FAFAFA] md:text-[10px] lg:text-start lg:text-[18px]">
                 {desc}
               </p>
             </div>
-            <span className="flex h-[2.5px] w-full rounded bg-[#C8EBE2] lg:hidden" />
+            <span className="mb-[3px] flex h-[2.5px] w-full rounded bg-[#C8EBE2] lg:my-0 lg:hidden" />
 
             <div className="mr-[8px] flex flex-col items-end justify-evenly">
-              <h1 className="font-adam text-[30px] font-bold text-[#FAFAFA] lg:text-[60px] lg:leading-[70px]">
+              <h1 className="font-adam text-[30px] font-bold leading-[30px] text-[#FAFAFA] lg:text-[60px] lg:leading-[70px]">
                 {title}
               </h1>
-              <h2 className="text-end font-adam text-[12px] font-bold text-[#FAFAFA] lg:mt-[10px] lg:text-[20px] lg:leading-[25px]">
+              <h2 className="text-end font-adam text-[10px] font-bold text-[#FAFAFA] lg:mt-[10px] lg:text-[20px] lg:leading-[25px]">
                 {subtitle}
               </h2>
             </div>
           </div>
-          <div className="flex h-[150px] bg-[#C8EBE2] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] lg:w-[150px]">
-            <Image src={icon} height={200} width={200} />
+          <div className="flex h-[100px] min-w-[100px] items-center justify-center bg-[#C8EBE2] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)] lg:h-[150px] lg:w-[150px]">
+            <div className="h-[66px] w-[66px] lg:h-[100px] lg:w-[100px]">
+              <Image src={icon} height={200} width={200} />
+            </div>
           </div>
         </div>
       )
