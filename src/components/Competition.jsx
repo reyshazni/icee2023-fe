@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import BCC from '../images/bcc.svg'
-import IBDC from '../images/ibdc.svg'
-import CETC from '../images/cetc.svg'
+import BCC from '../images/BCC.png'
+import IBDC from '../images/Bridge.png'
+import CETC from '../images/Tender.png'
 import SlideFromLeft from './Animations/SlideFromLeft'
 import SlideFromRight from './Animations/SlideFromRight'
 
