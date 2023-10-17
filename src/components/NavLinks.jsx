@@ -16,7 +16,7 @@ export function NavLinks() {
     <Link
       key={label}
       href={href}
-      className={`relative rounded-lg px-4 font-sarmady text-[40px] font-bold ${
+      className={`relative rounded-lg px-4 pt-[3px] leading-[40px] font-sarmady text-[30px] font-bold ${
         router.asPath === href
           ? 'inset-0 rounded-[30px] bg-[#004141] text-[#FAFAFA] delay=[150ms]'
           : 'text-[#004141]'

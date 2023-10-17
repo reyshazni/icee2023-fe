@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import HMSLogo from '../images/logos/hms_logo.png'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function EmailIcon(props) {
   return (
@@ -78,6 +79,8 @@ function TiktokIcon(props) {
 }
 
 export function Footer() {
+  const router = useRouter()
+
   return (
     <footer
       id="footer"
@@ -121,10 +124,32 @@ export function Footer() {
           </div>
           <span className="h-[0.5px] w-full rounded-full bg-[#004141] lg:h-[1px]" />
           <div className="flex items-center gap-[9px] lg:gap-[18px]">
-            <EmailIcon className="h-[15px] w-[15px] lg:h-[30px] lg:w-[30px]" />
-            <InstagramIcon className="h-[15px] w-[15px] lg:h-[30px] lg:w-[30px]" />
-            <WhatsappIcon className="h-[15px] w-[15px] lg:h-[30px] lg:w-[30px]" />
-            <TiktokIcon className="h-[15px] w-[15px] lg:h-[30px] lg:w-[30px]" />
+            <EmailIcon
+              className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
+              onClick={() => {
+                console.log('EMAIL')
+              }}
+            />
+            <InstagramIcon
+              className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
+              onClick={() => {
+                router.push('https://www.instagram.com/iceeitb/')
+              }}
+            />
+            <WhatsappIcon
+              className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
+              onClick={() => {
+                console.log('WA')
+              }}
+            />
+            <TiktokIcon
+              className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
+              onClick={() => {
+                router.push(
+                  'https://www.tiktok.com/@iceeitb?_t=8gZqBBOQlsY&_r=1'
+                )
+              }}
+            />
           </div>
         </div>
         <div className="flex flex-col">
