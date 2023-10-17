@@ -102,10 +102,11 @@ export default function PastEvents() {
   return (
     
       <FadeIn>
-        <div className="relative flex h-[200px] w-[100vw] items-center justify-center lg:h-[800px]">
+        <div className="relative flex w-[100vw] h-[250px] lg:items-center justify-center lg:h-[700px] overflow-hidden">
+          
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
-              className="absolute rounded-[8px] border-[1px] border-[#C8EBE2] bg-[#004141] shadow-[4px_25px_100px_0_rgba(250,250,250,0.20)]"
+              className="absolute rounded-[8px] border-[1px] border-[#C8EBE2] bg-[#004141] shadow-[1px_1px_15px_0_rgba(250,250,250,0.20)] md:shadow-[1px_1px_15px_0_rgba(250,250,250,0.20)] lg:shadow-[2px_1px_25px_0_rgba(250,250,250,0.20)]"
               key={page}
               custom={direction}
               variants={variants}
@@ -132,7 +133,7 @@ export default function PastEvents() {
               <img
                 src={images[imageIndex].img.src}
                 draggable="false"
-                className="h-[150px] w-[300px] object-cover md:w-[400px] lg:h-[600px] lg:w-[80vw]	"
+                className="h-[150px] w-[300px] object-cover md:w-[400px] lg:h-[450px] lg:w-[60vw]	rounded-[8px]"
               />
               <div className="px-[15px] pt-[17px] pb-[10px] lg:px-[30px] lg:pt-[30px]">
                 <h2 className="font-montserrat text-[11px] font-medium text-[#FAFAFA] lg:text-[30px]">
@@ -146,12 +147,12 @@ export default function PastEvents() {
           </AnimatePresence>
 
           <NextButton
-            className="top-[calc(50% - 20px)] absolute right-[25px] z-[2] hidden h-[40px]  w-[40px] cursor-pointer select-none lg:flex"
+            className="top-[calc(50% - 20px)] absolute right-[100px] z-[2] hidden h-[40px]  w-[40px] cursor-pointer select-none lg:flex"
             onClick={() => paginate(1)}
           />
 
           <PrevButton
-            className="top-[calc(50% - 20px)] absolute left-[25px] z-[2] hidden h-[40px]  w-[40px] cursor-pointer select-none lg:flex"
+            className="top-[calc(50% - 20px)] absolute left-[100px] z-[2] hidden h-[40px]  w-[40px] cursor-pointer select-none lg:flex"
             onClick={() => paginate(-1)}
           />
         </div>
