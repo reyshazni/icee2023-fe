@@ -133,14 +133,14 @@ export default function Vision() {
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #2
                 </span>
-                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#C8EBE2] lg:text-[6vw]">
+                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#FAFAFA] lg:text-[6vw]">
                   Innovate
                 </h1>
               </>
             }
             children2={
               <>
-                <p className="font-montserrat text-[18px] font-bold text-[#C8EBE2] lg:text-[1.5vw]">
+                <p className="font-montserrat text-[18px] font-bold text-[#FAFAFA] lg:text-[1.5vw]">
                   INNOVATE is to creatively introduce novel ideas, methods, or
                   technologies, fostering positive change and advancement within
                   an organization or industry.
@@ -162,14 +162,14 @@ export default function Vision() {
                 <span className="px-[25px] pt-[20px] font-montserrat text-[24px] text-[#FAFAFA] lg:text-[30px]">
                   #3
                 </span>
-                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#FFC892] lg:text-[6vw]">
+                <h1 className="px-[25px] font-sarmady text-[63px] font-bold leading-[100px] text-[#FAFAFA] lg:text-[6vw]">
                   Contribute
                 </h1>
               </>
             }
             children2={
               <>
-                <p className="font-montserrat text-[18px] font-bold text-[#FFC892] lg:text-[1.5vw]">
+                <p className="font-montserrat text-[18px] font-bold text-[#FAFAFA] lg:text-[1.5vw]">
                   CONTRIBUTE means actively and purposefully provide valuable
                   input, resources, or effort toward a particular goal or cause,
                   with the intention of enhancing its success or impact.
