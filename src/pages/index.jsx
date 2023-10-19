@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ICEE 2023</title>
+        <title>ICEE 2024</title>
         <meta
           name="description"
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
@@ -74,3 +74,7 @@ export default function Home() {
     </>
   )
 }
+// TODO : 
+// 1. Change HTML title to 2024 (DONE)
+// 2. Change the .ico to https://drive.google.com/file/d/1dlb8QH7cslW1j0cpQh8LdXWwYEfSYeJy/view (DONE)
+// 3. Resize the carousel to fit the Heading and the carousel in one view 

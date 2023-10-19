@@ -62,7 +62,7 @@ export default function ResponsiveCarousel() {
               data={carouselData}
               carouselWidth={parentWidth}
               slideWidth={500}
-              height={parentWidth <= 767 ? 400 : 700}
+              height={parentWidth <= 767 ? 400 : 600}
               slideComponent={Card}
               maxVisibleSlide={5}
               currentVisibleSlide={currentVisibleSlide}
@@ -87,27 +87,27 @@ export const Card = React.memo(function (props) {
     <ScaleUp duration={dataIndex === 0 ? 0.7 : dataIndex * 0.9}>
       <div
         key={dataIndex}
-        className="my-slide-component flex h-[300px] w-[100%] items-center p-4 md:h-[700px] lg:h-[700px]"
+        className="my-slide-component flex h-[300px] w-[100%] items-center p-4 md:h-[500px] lg:h-[500px]"
       >
-        <div className="event-card m-auto flex h-[300px] w-[60%] select-none flex-col items-center justify-center gap-[15px] rounded-[8px] border-[1px] border-[#FAFAFA] bg-[#1B4141] px-[20px] md:h-[600px] md:w-[100%] md:gap-[25px] lg:h-[600px] lg:w-[100%] lg:gap-[25px]">
-          <div className="w-[60px] md:w-max lg:w-max">
+        <div className="event-card m-auto flex h-[300px] w-[60%] select-none flex-col items-center justify-center gap-[15px] rounded-[8px] border-[1px] border-[#FAFAFA] bg-[#1B4141] px-[20px] md:h-[500px] md:w-[80%] md:gap-[15px] lg:h-[500px] lg:w-[80%] lg:gap-[15px]">
+          <div className="w-[60px] md:w-[100px] lg:w-[100px]">
             <Image
               src={carouselData[dataIndex].img}
               draggable={false}
               alt={carouselData[dataIndex].title}
             />
           </div>
-          <h1 className="text-center font-adam text-[24px] font-semibold text-[#FAFAFA] md:text-[40px] lg:text-[40px] lg:leading-[45px]">
+          <h1 className="text-center font-adam text-[24px] font-semibold text-[#FAFAFA] md:text-[30px] lg:text-[30px] lg:leading-[45px]">
             {carouselData[dataIndex].title}
           </h1>
-          <p className="text-center font-montserrat text-[8px] text-[#FAFAFA] md:text-[16px] lg:text-[16px]">
+          <p className="text-center font-montserrat text-[8px] text-[#FAFAFA] md:text-[12px] lg:text-[12px]">
             {carouselData[dataIndex].desc}
           </p>
           <button
             onClick={() => {
               router.push('/register')
             }}
-            className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[15px] lg:w-[200px] lg:py-[15px]"
+            className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[10px] lg:w-[200px] lg:py-[10px]"
           >
             <p className="text-center font-adam text-[12px] font-extrabold md:text-[18px] lg:text-[18px]">
               Register
