@@ -6,6 +6,10 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import iceeLogo from 'src/images/logos/icee_logo.svg'
+import Image from 'next/image'
+import { useInView } from "react-intersection-observer";
+
 
 function MenuIcon(props) {
   return (
@@ -47,30 +51,33 @@ function MobileNavLink({ children, ...props }) {
 
 export function Header() {
   return (
-    <header>
+    <header className="fixed z-[1000] w-full ">
       <nav>
-        <Container className="relative z-50 flex justify-between py-8">
-          <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
-            </Link>
-            <div className="hidden lg:flex lg:gap-10">
+        <div className="relative z-50 flex">
+          <div className="z-10 hidden items-center justify-between bg-[rgba(200,235,226,0.50)] px-[80px] py-[10px] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)] backdrop-blur lg:flex lg:w-full">
+            <a href="#">
+              <Image height={60} width={60} src={iceeLogo} alt="ICEE Logo" />
+            </a>
+            <div className="hidden lg:flex lg:gap-[70px]">
               <NavLinks />
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex w-full items-center justify-between bg-[rgba(200,235,226,0.50)] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)] lg:hidden">
+            <Link href="/" className="m-2 flex p-2 lg:hidden">
+              <Image height={40} width={40} src={iceeLogo} alt="ICEE Logo" />
+            </Link>
             <Popover className="lg:hidden">
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+                    className="relative z-10 m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:bg-[#FFFFFF] active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>
                       open ? (
-                        <ChevronUpIcon className="h-6 w-6" />
+                        <ChevronUpIcon className="h-10 w-10" />
                       ) : (
-                        <MenuIcon className="h-6 w-6" />
+                        <MenuIcon className="h-10 w-10" />
                       )
                     }
                   </Popover.Button>
@@ -98,22 +105,13 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="#features">
-                              Features
+                            <MobileNavLink href="/">Home</MobileNavLink>
+                            <MobileNavLink href="#footer">
+                              Contacts
                             </MobileNavLink>
-                            <MobileNavLink href="#reviews">
-                              Reviews
+                            <MobileNavLink href="/register">
+                              Register
                             </MobileNavLink>
-                            <MobileNavLink href="#pricing">
-                              Pricing
-                            </MobileNavLink>
-                            <MobileNavLink href="#faqs">FAQs</MobileNavLink>
-                          </div>
-                          <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/login" variant="outline">
-                              Log in
-                            </Button>
-                            <Button href="#">Download the app</Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -122,14 +120,8 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
-              Log in
-            </Button>
-            <Button href="#" className="hidden lg:block">
-              Download
-            </Button>
           </div>
-        </Container>
+        </div>
       </nav>
     </header>
   )

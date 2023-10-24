@@ -1,27 +1,33 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
 
+  const router = useRouter()
+
   return [
-    ['Features', '#features'],
-    ['Reviews', '#reviews'],
-    ['Pricing', '#pricing'],
-    ['FAQs', '#faqs'],
+    ['Home', '/'],
+    ['Contact', '/#footer'],
+    ['Register', '/register'],
   ].map(([label, href], index) => (
     <Link
       key={label}
       href={href}
-      className="relative -my-2 -mx-3 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
+      className={`relative rounded-lg px-4 pt-[3px] leading-[40px] font-sarmady text-[30px] font-bold ${
+        router.asPath === href
+          ? 'inset-0 rounded-[30px] bg-[#004141] text-[#FAFAFA] delay=[150ms]'
+          : 'text-[#004141]'
+      }  transition-colors hover:text-[#FAFAFA]`}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
       <AnimatePresence>
         {hoveredIndex === index && (
           <motion.span
-            className="absolute inset-0 rounded-lg bg-gray-100"
+            className="absolute inset-0 rounded-[30px] bg-[#004141] "
             layoutId="hoverBackground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.15 } }}
@@ -32,7 +38,7 @@ export function NavLinks() {
           />
         )}
       </AnimatePresence>
-      <span className="relative z-10">{label}</span>
+      <span className="relative z-10 ">{label}</span>
     </Link>
   ))
 }

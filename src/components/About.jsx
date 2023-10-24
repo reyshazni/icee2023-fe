@@ -1,6 +1,8 @@
 import { useId } from 'react'
 
 import { Container } from '@/components/Container'
+import ScaleUp from './Animations/ScaleUp'
+import FadeIn from './Animations/FadeIn'
 
 const features = [
   {
@@ -186,41 +188,33 @@ function DeviceChartIcon(props) {
   )
 }
 
-export function SecondaryFeatures() {
+export function About() {
   return (
     <section
-      id="secondary-features"
+      id="about"
       aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32"
+      className="relative py-20 lg:h-[350px]"
     >
-      <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
-          </h2>
-          <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
-        >
-          {features.map((feature) => (
-            <li
-              key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
-            >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
-                {feature.name}
-              </h3>
-              <p className="mt-2 text-gray-700">{feature.description}</p>
-            </li>
-          ))}
-        </ul>
-      </Container>
+      <h1 className="absolute right-10 hidden font-sarmady font-semibold text-[#004141]  md:top-[-36%] md:flex md:text-[150px] lg:top-[-60%] lg:flex lg:text-[240px]">
+        ICEE 2024
+      </h1>
+      <FadeIn duration={3}>
+        <Container>
+          <div className="mx-auto max-w-[80%] sm:text-center md:max-w-2xl lg:max-w-[100%]">
+            <p className="mt-2 text-center font-montserrat text-[14px] font-normal text-[#FAFAFA] md:text-[20px] lg:text-[28px]">
+              ITB Civil Engineering Expo (ICEE) is an annual event organized by
+              the{' '}
+              <span className="font-bold">
+                Civil Engineering Student Association (Himpunan Mahasiswa Sipil
+                ITB)
+              </span>{' '}
+              which is present as a forum for collaboration for students in
+              developing themselves through various events that are integrated
+              with the technical issues raised
+            </p>
+          </div>
+        </Container>
+      </FadeIn>
     </section>
   )
 }
