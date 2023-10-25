@@ -84,9 +84,9 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className="flex w-full items-center justify-between bg-[#C8EBE2] px-[25px] py-[25px] lg:px-[120px] lg:py-[45px]"
+      className="flex w-full items-start justify-between  bg-[#C8EBE2] px-[10px] py-[25px] lg:items-center lg:px-[25px] lg:px-[120px] lg:py-[45px]"
     >
-      <div className="flex w-[40%] items-center gap-[20px] lg:w-[30%]">
+      <div className="flex w-[45%] items-center gap-[10px] lg:w-[30%] lg:gap-[20px]">
         <div className="flex h-[40px] min-h-[40px] w-[40px] min-w-[40px] lg:min-h-[80px] lg:min-w-[80px]">
           <Image src={HMSLogo} className="relative w-full object-contain" />
         </div>
@@ -100,8 +100,8 @@ export function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex w-[40%] flex-col justify-between gap-[20px] lg:w-[60%] lg:flex-row">
-        <div className="flex flex-col items-end gap-[8px] lg:items-start lg:gap-[16px]">
+      <div className="flex w-[45%] flex-col justify-between gap-[20px] lg:w-[60%] lg:flex-row">
+        <div className="flex flex-col items-start gap-[8px] lg:items-start lg:gap-[16px]">
           <div className="flex gap-[22.5px] lg:gap-[45px]">
             <Link
               href={'/'}
@@ -156,17 +156,17 @@ export function Footer() {
           <h1 className="text-end font-sarmady text-[10px] font-bold text-[#004141] lg:text-start lg:text-[20px]">
             PIC
           </h1>
-          <div className="flex justify-end gap-[20px] lg:justify-start">
-            <div className="flex flex-col">
-              <p className="font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
-                Ariq (Marketing)
+          <div className="flex w-full justify-between gap-[20px] lg:justify-start">
+            <div className="flex flex-col lg:min-w-[220px]">
+              <p className="line-clamp-2 visible font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
+                Ariq Rasyad B. (Head of Marketing)
               </p>
-              <p className="font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
-                Jeko (Event)
+              <p className="line-clamp-2 visible font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
+                Reinhart Jericho S. (Project Manager)
               </p>
             </div>
             <div className="flex flex-col items-end lg:items-start">
-              <p className="font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
+              <p className="mb-[10px] font-montserrat text-[6px] text-[#004141] xs:mb-0 sm:mb-0 md:mb-0 lg:mb-0 lg:text-[12px]">
                 +6282115125731
               </p>
               <p className="font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
