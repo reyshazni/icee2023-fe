@@ -157,7 +157,7 @@ export function Footer() {
             PIC
           </h1>
           <div className="flex w-full justify-between gap-[20px] lg:justify-start">
-            <div className="flex flex-col">
+            <div className="flex flex-col lg:min-w-[220px]">
               <p className="line-clamp-2 visible font-montserrat text-[6px] text-[#004141] lg:text-[12px]">
                 Ariq Rasyad B. (Head of Marketing)
               </p>
