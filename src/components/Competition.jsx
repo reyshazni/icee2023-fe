@@ -98,7 +98,7 @@ export default function Competition() {
             title={'CETC'}
             subtitle={'Civil Engineering Tender Competition'}
             desc={
-              'Innovative Bridge Design Competition is a competition where participants will strive to design an efficient and economic bridge while implementing technology-based innovation on its operational planning'
+              'Civil Engineering Tender Competition is a competition where participants are challenged to make bid from a given project while actualizing it in tender documents with optimum cost and proper construction methods'
             }
           />
         </SlideFromLeft>
@@ -110,7 +110,7 @@ export default function Competition() {
             title={'IBDC'}
             subtitle={'Innovative Bridge Design Competition'}
             desc={
-              'Civil Engineering Tender Competition is a competition where participants are challenged to make bid from a given project while actualizing it in tender documents with optimum cost and proper construction methods'
+              'Innovative Bridge Design Competition is a competition where participants will strive to design an efficient and economic bridge while implementing technology-based innovation on its operational planning'
             }
           />
         </SlideFromRight>
