@@ -5,7 +5,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   theme: {
     screens: {
-      'xs': '410px',
+      xs: '410px',
       ...defaultTheme.screens,
     },
     fontSize: {
@@ -24,6 +24,9 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      transformOrigin: {
+        bottom: 'center bottom',
+      },
       animation: {
         'fade-in': 'fade-in 0.5s linear forwards',
         marquee: 'marquee var(--marquee-duration) linear infinite',
@@ -35,6 +38,7 @@ module.exports = {
         glow: 'glow 3s ease-in-out infinite',
         glowItem: 'glowItem 5s ease-in-out infinite',
         glowBullet: 'glowBullet 2s ease-in-out infinite',
+        rotate: 'rotate 5s ease-in-out infinite',
       },
       // backgroundImage : {
       //   'stars':'url()'
@@ -89,6 +93,21 @@ module.exports = {
         glowBullet: {
           '0%, 100%': { opacity: 0.5 },
           '30%': { opacity: 1 },
+        },
+        rotate: {
+          // '0%, 24.75%': { transform: 'rotate(0deg)' },
+          // '25%, 49.75%': { transform: 'rotate(90deg)' },
+          // '50%, 74.75%': { transform: 'rotate(180deg)' },
+          // '75%, 99.75%': { transform: 'rotate(270deg)' },
+          // '100%': { transform: 'rotate(360deg)' },
+          // '0%': { transform: 'rotate(0deg)' },
+          // '100%': { transform: 'rotate(360deg)' },
+          '0%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(90deg)' },
+
+          '50%': { transform: 'rotate(180deg)' },
+          '75%': { transform: 'rotate(270deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
       },
       maxWidth: {

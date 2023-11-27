@@ -10,7 +10,17 @@ import UploadImage from '@/components/UploadImage'
 export default function Register() {
   return (
     <>
-      <OnConstruction />
+      <Head>
+        <title>🚧Under Construction 🚧</title>
+      </Head>
+      <main className="flex h-full items-center justify-center">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-300 p-3">
+          <div className="left-[9.50px] top-[4.50px] flex h-5 w-5 justify-center rounded-lg border-2 border-sky-700 bg-transparent p-0.5">
+            <div className=" h-1/2 w-0.5 origin-bottom animate-rotate rounded-sm bg-sky-700"></div>
+          </div>
+        </div>
+      </main>
+      {/* <OnConstruction /> */}
       {/* <div>
         <h1>Image Upload</h1>
         <UploadImage />
