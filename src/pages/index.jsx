@@ -60,10 +60,10 @@ export default function Home() {
 
         <Numbers />
 
-        {/* <Sponsors
+        <Sponsors
           title={'Our Sponsors'}
           url={process.env.BE_STAGING_SPONSOR_URL}
-        /> */}
+        />
 
         <Sponsors
           title={'Our Media Partners'}
