@@ -45,7 +45,7 @@ const UploadImage = () => {
           <option value="bukti_follow">Bukti Follow</option>
           <option value="ktm">KTM</option>
         </select>
-        <input type="file" onChange={handleFileChange} />
+        <input type="file" onChange={handleFileChange} accept="image/png, image/jpeg" />
         <button type="submit">Upload</button>
       </form>
       {uploadResponse && <pre>Response: {uploadResponse}</pre>}
