@@ -74,7 +74,3 @@ export default function Home() {
     </>
   )
 }
-// TODO : 
-// 1. Change HTML title to 2024 (DONE)
-// 2. Change the .ico to https://drive.google.com/file/d/1dlb8QH7cslW1j0cpQh8LdXWwYEfSYeJy/view (DONE)
-// 3. Resize the carousel to fit the Heading and the carousel in one view 
