@@ -105,7 +105,12 @@ export const Card = React.memo(function (props) {
           </p>
           <button
             onClick={() => {
-              router.push('/register')
+              // Temporary fix
+              if (dataIndex === 0) {
+                router.push('/register/conference')
+              } else {
+                router.push('/register')
+              }
             }}
             className="w-[100px] rounded-[32px] bg-[#FFC892] py-[7.5px] md:w-[200px] md:py-[10px] lg:w-[200px] lg:py-[10px]"
           >

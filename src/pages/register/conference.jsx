@@ -220,7 +220,7 @@ export default function Conference() {
       <Header />
       <main className="relative flex min-h-full flex-col items-center justify-start bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)] py-[100px]">
         {isSubmitting && <SubmitLoader />}
-        <h1 className="text-center font-sarmady text-[60px] sm:text-[80px] font-semibold leading-[80px] lg:leading-[100px] text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] sm:text-[80px] md:text-[80px] lg:text-[120px]">
+        <h1 className="text-center font-sarmady text-[60px] font-semibold leading-[80px] text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] sm:text-[80px] sm:text-[80px] md:text-[80px] lg:text-[120px] lg:leading-[100px]">
           Conference
         </h1>
         <div className="mb-[100px] flex min-w-[50vw] flex-wrap items-center justify-center gap-[10px] xs:gap-[10px] md:gap-[20px] lg:gap-[20px]">
@@ -244,7 +244,7 @@ export default function Conference() {
 
             return (
               <div key={field.id} className="mb-[100px] flex flex-col">
-                <h2 className=" font-sarmady text-[20px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] lg:text-[60px]">
+                <h2 className=" font-sarmady text-[40px] font-semibold text-[#FAFAFA] [text-shadow:_4px_4px_0_rgb(106_155_185)] lg:text-[60px]">
                   Peserta {index + 1}
                 </h2>
                 <div className="flex flex-col gap-[25px]">
@@ -253,6 +253,7 @@ export default function Conference() {
                       Nama Lengkap
                     </label>
                     <input
+                      placeholder="Example: John Wick"
                       {...register(`data_diri.${index}.nama_lengkap`, {
                         required: 'This field is required',
                       })}
@@ -269,7 +270,7 @@ export default function Conference() {
                       Email
                     </label>
                     <input
-                      placeholder="Example : john@mail.com"
+                      placeholder="Example: john@mail.com"
                       {...register(`data_diri.${index}.email`, {
                         required: 'This field is required',
                         pattern: {
@@ -291,7 +292,7 @@ export default function Conference() {
                       No. Telp
                     </label>
                     <input
-                      placeholder="Example : 0812341234123"
+                      placeholder="Example: 0812341234123"
                       {...register(`data_diri.${index}.no_telepon`, {
                         required: 'This field is required',
                         pattern: {
@@ -313,6 +314,7 @@ export default function Conference() {
                       Institusi/Universitas
                     </label>
                     <input
+                      placeholder="Example: Universitas Indonesia"
                       {...register(`data_diri.${index}.institusi`, {
                         required: 'This field is required',
                       })}
@@ -329,6 +331,7 @@ export default function Conference() {
                       Jurusan
                     </label>
                     <input
+                      placeholder="Example: Sistem Informasi"
                       {...register(`data_diri.${index}.jurusan`, {
                         required: 'This field is required',
                       })}
@@ -345,6 +348,7 @@ export default function Conference() {
                       Alamat
                     </label>
                     <textarea
+                      placeholder="Example: Jalan Kirai no.11, Depok, Jawa Barat"
                       {...register(`data_diri.${index}.alamat`, {
                         required: 'This field is required',
                       })}
@@ -422,6 +426,7 @@ export default function Conference() {
                 Essay
               </label>
               <textarea
+                placeholder="Example: Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Nullam ac nunc at nisl fermentum sollicitudin. Fusce dictum augue et libero."
                 {...register(`essay`, {
                   required: 'This field is required',
                 })}
@@ -436,6 +441,7 @@ export default function Conference() {
                 Submission Video (Link)
               </label>
               <input
+                placeholder="Example: https://www.youtube.com/@PewDiePie"
                 {...register(`link_submission`, {
                   required: 'This field is required',
                 })}
@@ -450,7 +456,7 @@ export default function Conference() {
                 No. Telp Darurat
               </label>
               <input
-                placeholder="Example : 0812341234123"
+                placeholder="Example: 0812341234123"
                 {...register(`kontak_darurat`, {
                   required: 'This field is required',
                   pattern: {
