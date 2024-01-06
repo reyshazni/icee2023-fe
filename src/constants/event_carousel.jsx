@@ -4,6 +4,8 @@ import Seminar from '../images/events/Seminar.png'
 import Talkshow from '../images/events/Talkshow.png'
 import Workshop from '../images/events/Workshop.png'
 
+// TODO : Add url attribute
+
 export const carouselData = [
   {
     img: Conference,
