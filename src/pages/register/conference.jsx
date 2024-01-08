@@ -9,7 +9,10 @@ import { toast } from 'react-toastify'
 import SubmitLoader from '@/components/Loader/SubmitLoader'
 
 export default function Conference() {
-  const [loading, setLoading] = useState([false, false, false])
+  const [loading, setLoading] = useState({
+    ktm: [false, false, false],
+    essay: false,
+  })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [apiResponse, setApiResponse] = useState({})
 
@@ -52,7 +55,7 @@ export default function Conference() {
           url_ktm: '',
         },
       ],
-      essay: '',
+      url_essay: '',
       link_submission: '',
       kontak_darurat: '',
     },
@@ -95,19 +98,55 @@ export default function Conference() {
           url_ktm: '',
         },
       ],
-      essay: '',
+      url_essay: '',
       link_submission: '',
       kontak_darurat: '',
     })
     setApiResponse({})
-    setLoading([false, false, false])
+    setLoading({
+      ktm: [false, false, false],
+      essay: false,
+    })
   }
 
   const [fileInputKeys, setFileInputKeys] = useState(
     fields.map(() => Math.random())
   )
 
+  const [essayInputKey, setEssayInputKey] = useState(Math.random())
+
   const onSubmit = async (data) => {
+    // This is data coming from the react-hook-form
+    for (let index = 0; index < data.data_diri.length; index++) {
+      const element = data.data_diri[index]
+      if (element.url_ktm === '') {
+        toast.warn(`Peserta ${index + 1} belum mengupload KTM`, {
+          position: 'bottom-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: 'colored',
+        })
+        return
+      }
+    }
+    if (data.url_essay === '') {
+      toast.warn(`Belum mengupload essay`, {
+        position: 'bottom-center',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'colored',
+      })
+      return
+    }
+
     setIsSubmitting(true)
     try {
       const response = await fetch(
@@ -125,9 +164,9 @@ export default function Conference() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
-      const done = await response.json()
       console.log('Success', done)
       setIsSubmitting(false)
+      const done = await response.json()
       toast.success(done.data.message, {
         position: 'bottom-center',
         autoClose: 3000,
@@ -143,7 +182,8 @@ export default function Conference() {
       // TODO : HANDLE ERROR
       console.error('Error uploading file:', error)
       setIsSubmitting(false)
-      toast.error(done.data.message, {
+
+      toast.error(error.message, {
         position: 'bottom-center',
         autoClose: 3000,
         hideProgressBar: true,
@@ -156,18 +196,57 @@ export default function Conference() {
     }
   }
 
-  const handleFileChange = async (event, index, nama_lengkap) => {
-    setLoading((prevLoading) => {
-      const updatedLoading = [...prevLoading]
-      updatedLoading[index] = true
-      return updatedLoading
-    })
+  //   const setLoadingState = (key, index, value) => {
+  //     setLoading((prevLoading) => {
+  //       // If the key corresponds to an array
+  //       if (Array.isArray(prevLoading[key])) {
+  //         // Create a new array with the updated value at the specified index
+  //         const updatedArray = [...prevLoading[key]]
+  //         updatedArray[index] = value
+
+  //         return {
+  //           ...prevLoading,
+  //           [key]: updatedArray,
+  //         }
+  //       } else {
+  //         // If the key corresponds to a boolean
+  //         console.log()
+  //         return {
+  //           ...prevLoading,
+  //           [key]: value,
+  //         }
+  //       }
+  //     })
+  //   }
+
+  const handleFileChange = async (event, index, nama_lengkap, type) => {
+    const newLoadingState = { ...loading }
+
+    if (event.target.files.length === 0) {
+      // If no file was selected (i.e., "Cancel" was clicked), reset loading state
+      if (type === 'ktm') {
+        setLoading((prevState) => ({
+          ...prevState,
+          ktm: prevState.ktm.map((item, idx) => (idx === index ? false : item)),
+        }))
+      } else if (type === 'essay') {
+        setLoading((prevState) => ({ ...prevState, essay: false }))
+      }
+      return
+    }
+
+    if (type === 'ktm') {
+      newLoadingState.ktm[index] = true
+    } else if (type === 'essay') {
+      newLoadingState.essay = true
+    }
+    setLoading(newLoadingState)
 
     const file = event.target.files[0]
     if (file) {
       const formData = new FormData()
       formData.append('file', file)
-      formData.append('type', 'ktm')
+      formData.append('type', type)
       formData.append('event', 'conference')
       formData.append('owner', nama_lengkap.split(' ')[0].toLowerCase())
 
@@ -185,21 +264,32 @@ export default function Conference() {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         } else {
-          console.log('URL KTM : ', data.data.file_url)
-          setValue(`data_diri.${index}.url_ktm`, data.data.file_url)
-          setApiResponse({ ...apiResponse, [index]: data })
+          console.log(`${type.toUpperCase()} URL: `, data.data.file_url)
+          if (type === 'ktm') {
+            setValue(`data_diri.${index}.url_ktm`, data.data.file_url)
+            setApiResponse({ ...apiResponse, [index]: data })
+          } else if (type === 'essay') {
+            setValue('url_essay', data.data.file_url)
+            setApiResponse({ ...apiResponse, url_essay: data })
+          }
         }
       } catch (error) {
-        setApiResponse({ ...apiResponse, [index]: 'error' })
         console.error('Error uploading file:', error)
+        if (type === 'ktm') {
+          setApiResponse({ ...apiResponse, [index]: 'error' })
+        } else if (type === 'essay') {
+          setApiResponse({ ...apiResponse, url_essay: 'error' })
+        }
+      } finally {
+        // Reset the loading state
+        if (type === 'ktm') {
+          newLoadingState.ktm[index] = false
+        } else if (type === 'essay') {
+          newLoadingState.essay = false
+        }
+        setLoading(newLoadingState)
       }
     }
-
-    setLoading((prevLoading) => {
-      const updatedLoading = [...prevLoading]
-      updatedLoading[index] = false
-      return updatedLoading
-    })
   }
 
   const resetFileInput = (index) => {
@@ -207,6 +297,8 @@ export default function Conference() {
       currentKeys.map((key, i) => (i === index ? Math.random() : key))
     )
   }
+
+  const namaAnggotaSatu = watch(`data_diri.${0}.nama_lengkap`)
 
   return (
     <>
@@ -369,7 +461,9 @@ export default function Conference() {
                       type="file"
                       accept="image/png, image/jpeg"
                       className={formClasses}
-                      onChange={(e) => handleFileChange(e, index, namaLengkap)}
+                      onChange={(e) =>
+                        handleFileChange(e, index, namaLengkap, 'ktm')
+                      }
                     />
                     {namaLengkap === '' ? (
                       <>
@@ -378,7 +472,7 @@ export default function Conference() {
                         </span>
                       </>
                     ) : null}
-                    {loading[index] ? (
+                    {loading.ktm[index] ? (
                       <div className="flex items-center gap-[10px]">
                         <p className="font-montserrat text-[16px] text-[#FFC892]">
                           Uploading
@@ -425,16 +519,60 @@ export default function Conference() {
               <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
                 Essay
               </label>
-              <textarea
-                placeholder="Example: Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Nullam ac nunc at nisl fermentum sollicitudin. Fusce dictum augue et libero."
-                {...register(`essay`, {
-                  required: 'This field is required',
-                })}
+              <input
+                key={essayInputKey}
+                disabled={namaAnggotaSatu === '' ? true : false}
+                type="file"
+                accept=".doc,.docx,.pdf"
                 className={formClasses}
+                onChange={(e) =>
+                  handleFileChange(e, null, namaAnggotaSatu, 'essay')
+                }
               />
-              <span className="font-montserrat text-[16px] text-[#FFC892]">
-                {errors.essay?.message}
-              </span>
+              {namaAnggotaSatu === '' ? (
+                <>
+                  <span className="font-montserrat text-[16px] text-[#FFC892]">
+                    Please fill in your name first
+                  </span>
+                </>
+              ) : null}
+              {loading.essay ? (
+                <div className="flex items-center gap-[10px]">
+                  <p className="font-montserrat text-[16px] text-[#FFC892]">
+                    Uploading
+                  </p>
+                  <ClipLoader color="#FFC892" size={15} />
+                </div>
+              ) : (
+                apiResponse['url_essay'] &&
+                (apiResponse['url_essay'] === 'error' ? (
+                  <>
+                    <p className='className="font-montserrat text-[16px] text-red-500'>
+                      An error occurred{' '}
+                      <p
+                        onClick={() => setEssayInputKey(Math.random())}
+                        className='className="font-montserrat text-[16px] text-red-500 underline'
+                      >
+                        Retry
+                      </p>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className='className="font-montserrat text-[16px] text-green-500'>
+                      Done✓{' '}
+                      <Link
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href={apiResponse['url_essay'].data.file_url}
+                        className='className="font-montserrat text-[16px] text-green-500 underline'
+                      >
+                        Preview
+                      </Link>
+                    </p>
+                  </>
+                ))
+              )}
             </div>
             <div className="">
               <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">

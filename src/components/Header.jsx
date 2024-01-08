@@ -8,8 +8,7 @@ import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import iceeLogo from 'src/images/logos/icee_logo.svg'
 import Image from 'next/image'
-import { useInView } from "react-intersection-observer";
-
+import { useInView } from 'react-intersection-observer'
 
 function MenuIcon(props) {
   return (
@@ -55,9 +54,9 @@ export function Header() {
       <nav>
         <div className="relative z-50 flex">
           <div className="z-10 hidden items-center justify-between bg-[rgba(200,235,226,0.50)] px-[80px] py-[10px] shadow-[0_4px_10px_0_rgba(71,77,91,0.50)] backdrop-blur lg:flex lg:w-full">
-            <a href="#">
+            <Link href="/">
               <Image height={60} width={60} src={iceeLogo} alt="ICEE Logo" />
-            </a>
+            </Link>
             <div className="hidden lg:flex lg:gap-[70px]">
               <NavLinks />
             </div>
