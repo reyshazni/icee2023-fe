@@ -14,27 +14,7 @@ const UploadImage = () => {
   }
 
   const handleUpload = async (event) => {
-    event.preventDefault()
-
-    if (!file) return
-
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-      const response = await fetch(
-        `https://be-staging-s3ey3nqirq-et.a.run.app/register/upload-file?type=${type}`,
-        {
-          method: 'POST',
-          body: formData,
-        }
-      )
-
-      const data = await response.json()
-      setUploadResponse(JSON.stringify(data, null, 2))
-    } catch (error) {
-      console.error('There was an error uploading the image:', error)
-    }
+    
   }
 
   return (

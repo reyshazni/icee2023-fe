@@ -32,6 +32,9 @@ const nextConfig = {
       'https://be-production-s3ey3nqirq-et.a.run.app/asset/url-sponsor',
     BE_STAGING_MEDPAR_URL:
       'https://be-production-s3ey3nqirq-et.a.run.app/asset/url-media',
+      BE_STAGING_URL:"https://be-staging-s3ey3nqirq-et.a.run.app/",
+      BE_PROD_URL:"https://be-production-s3ey3nqirq-et.a.run.app/"
+
   },
 }
 
