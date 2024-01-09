@@ -319,6 +319,8 @@ export default function Conference() {
             Guidebook
           </h1>
           <Link
+            target="_blank"
+            rel="noopener noreferrer"
             href={'https://bit.ly/RegistrationICEE2024Conference'}
             className={`cursor-pointer rounded-lg bg-[rgba(200,235,226)] py-[5px] px-[20px] text-center font-montserrat text-[10px] font-[600] md:w-[150px] md:text-[12px] lg:w-[200px] lg:text-[16px]`}
           >
