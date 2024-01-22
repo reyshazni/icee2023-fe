@@ -26,7 +26,13 @@ export function TextField({ id, label, type = 'text', className, ...props }) {
   )
 }
 
-export function TextAreaField({ id, label, type = 'text', className, ...props }) {
+export function TextAreaField({
+  id,
+  label,
+  type = 'text',
+  className,
+  ...props
+}) {
   return (
     <div className={className}>
       {label && <Label id={id}>{label}</Label>}

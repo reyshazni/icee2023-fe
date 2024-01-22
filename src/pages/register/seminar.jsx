@@ -372,9 +372,15 @@ export default function Seminar() {
                     </span>
                   </div>
                   <div className="">
-                    <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
-                      NIM
-                    </label>
+                    {jenis_peserta === 'umum' ? (
+                      <label className="block font-sarmady text-[20px] font-[600] text-gray-400">
+                        NIM
+                      </label>
+                    ) : (
+                      <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
+                        NIM
+                      </label>
+                    )}
                     <input
                       disabled={jenis_peserta === 'umum'}
                       placeholder={
