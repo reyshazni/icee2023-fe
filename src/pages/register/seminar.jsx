@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
-import { formClasses } from '@/components/Fields'
+import { disabledFormClasses, formClasses } from '@/components/Fields'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { ClipLoader } from 'react-spinners'
@@ -339,7 +339,9 @@ export default function Seminar() {
                     <select
                       placeholder="Select one"
                       className={formClasses}
-                      {...register(`data_diri.${index}.jenis_peserta`)}
+                      {...register(`data_diri.${index}.jenis_peserta`,{
+                        required: 'This field is required',
+                      })}
                     >
                       <option disabled value="">
                         Choose One
@@ -371,9 +373,15 @@ export default function Seminar() {
                     </span>
                   </div>
                   <div className="">
-                    <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
-                      NIM
-                    </label>
+                    {jenis_peserta === 'umum' ? (
+                      <label className="block font-sarmady text-[20px] font-[600] text-gray-400">
+                        NIM
+                      </label>
+                    ) : (
+                      <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
+                        NIM
+                      </label>
+                    )}
                     <input
                       disabled={jenis_peserta === 'umum'}
                       placeholder={
@@ -382,10 +390,17 @@ export default function Seminar() {
                           : 'Example : 18282182'
                       }
                       {...register(`data_diri.${index}.nim`, {
-                        required: jenis_peserta === "umum" ? false : "This field is required",
+                        required:
+                          jenis_peserta === 'umum'
+                            ? false
+                            : 'This field is required',
                       })}
                       type={'text'}
-                      className={formClasses}
+                      className={
+                        jenis_peserta === 'umum'
+                          ? disabledFormClasses
+                          : formClasses
+                      }
                     />
                     <span className="font-montserrat text-[16px] text-[#FFC892]">
                       {errors.data_diri &&
