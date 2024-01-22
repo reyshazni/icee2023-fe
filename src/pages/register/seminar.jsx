@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
-import { formClasses } from '@/components/Fields'
+import { disabledFormClasses, formClasses } from '@/components/Fields'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { ClipLoader } from 'react-spinners'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
 import SubmitLoader from '@/components/Loader/SubmitLoader'
-import { FaRegTrashAlt } from 'react-icons/fa'
 import { FaTrashCan } from 'react-icons/fa6'
 
 export default function Seminar() {
@@ -202,7 +201,7 @@ export default function Seminar() {
   return (
     <>
       <Head>
-        <title>ICEE 2024</title>
+        <title>Seminar | ICEE 2024</title>
         <meta
           name="description"
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
@@ -339,7 +338,9 @@ export default function Seminar() {
                     <select
                       placeholder="Select one"
                       className={formClasses}
-                      {...register(`data_diri.${index}.jenis_peserta`)}
+                      {...register(`data_diri.${index}.jenis_peserta`, {
+                        required: 'This field is required',
+                      })}
                     >
                       <option disabled value="">
                         Choose One
@@ -382,15 +383,21 @@ export default function Seminar() {
                           : 'Example : 18282182'
                       }
                       {...register(`data_diri.${index}.nim`, {
-                        required: jenis_peserta === "umum" ? false : "This field is required",
+                        required:
+                          jenis_peserta === 'umum'
+                            ? false
+                            : 'This field is required',
                       })}
                       type={'text'}
-                      className={formClasses}
+                      className={jenis_peserta === 'umum'
+                      ? disabledFormClasses : formClasses}
                     />
-                    <span className="font-montserrat text-[16px] text-[#FFC892]">
-                      {errors.data_diri &&
-                        errors.data_diri[index]?.nim?.message}
-                    </span>
+                    {jenis_peserta === 'umum' ? null : (
+                      <span className="font-montserrat text-[16px] text-[#FFC892]">
+                        {errors.data_diri &&
+                          errors.data_diri[index]?.nim?.message}
+                      </span>
+                    )}
                   </div>
 
                   <div className="">
