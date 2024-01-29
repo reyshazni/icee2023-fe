@@ -6,14 +6,17 @@ export const fetchEarlyBirdStatus = async () => {
     const data = await response.json()
     const count = data.data.count
 
-    const currentDate = new Date() // Get the current date
-
-    const isEarlyBird =
-      count < 31 &&
-      (currentDate.getDate() === 30 || currentDate.getDate() === 31) &&
-      currentDate.getMonth() === 0 // January is month 0 in JavaScript
-
-    return isEarlyBird
+     const earlyBirdStart = new Date('2024-01-30T13:00:00+07:00'); // 30 January 2024, 13:00 GMT+7
+     const earlyBirdEnd = new Date('2024-02-02T23:59:00+07:00'); // 2 February 2024, 23:59 GMT+7
+ 
+     const currentDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }));
+ 
+     const isEarlyBird =
+       count < 31 &&
+       currentDate >= earlyBirdStart &&
+       currentDate <= earlyBirdEnd;
+ 
+     return isEarlyBird;
   } catch (error) {
     console.error('Error fetching early bird status:', error)
     return false // Default to not early bird if API call fails

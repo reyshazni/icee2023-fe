@@ -404,9 +404,14 @@ export default function Seminar() {
                         : formClasses
                     }
                   />
-                  <span className="font-montserrat text-[16px] text-[#FFC892]">
-                    {errors.data_diri && errors.data_diri[index]?.nim?.message}
-                  </span>
+                  {jenis_peserta === 'umum' ? (
+                    <></>
+                  ) : (
+                    <span className="font-montserrat text-[16px] text-[#FFC892]">
+                      {errors.data_diri &&
+                        errors.data_diri[index]?.nim?.message}
+                    </span>
+                  )}
                 </div>
 
                 <div className="">
@@ -512,7 +517,7 @@ export default function Seminar() {
           Shopeepay 08113608170 an. Rose Amelie
         </p>
         <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
-          Jika sudah melakukan pembayaran, dapart mengupload bukti pembayaran di
+          Jika sudah melakukan pembayaran, dapat mengupload bukti pembayaran di
           bawah ini.
         </p>
       </div>
