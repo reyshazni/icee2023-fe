@@ -471,9 +471,12 @@ export default function Seminar() {
         {priceData.discountTexts.length > 1 ? (
           <div className="flex w-full items-center justify-between">
             <ul className="flex-col">
-              {priceData.discountTexts.map((text) => {
+              {priceData.discountTexts.map((text, index) => {
                 return (
-                  <li className="block font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
+                  <li
+                    key={index}
+                    className="block font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]"
+                  >
                     - {text}
                   </li>
                 )
