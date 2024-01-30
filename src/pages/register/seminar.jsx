@@ -17,14 +17,7 @@ export default function Seminar() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [apiResponse, setApiResponse] = useState({})
   const [tabIndex, setTabIndex] = useState(0)
-  const [isEarlyBird, setIsEarlyBird] = useState(false)
   const router = useRouter()
-
-  useEffect(() => {
-    fetchEarlyBirdStatus().then((result) => {
-      setIsEarlyBird(result)
-    })
-  }, [])
 
   const {
     register,
@@ -119,22 +112,22 @@ export default function Seminar() {
       return
     }
 
-    fetchEarlyBirdStatus().then((result) => {
-      if (isEarlyBird !== result) {
-        toast.warn(`Tiket Early Bird sudah habis`, {
-          position: 'bottom-center',
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-          theme: 'colored',
-        })
-        router.push('/register/seminar')
-        return
-      }
-    })
+    // fetchEarlyBirdStatus().then((result) => {
+    //   if (isEarlyBird !== result) {
+    //     toast.warn(`Tiket Early Bird sudah habis`, {
+    //       position: 'bottom-center',
+    //       autoClose: 3000,
+    //       hideProgressBar: true,
+    //       closeOnClick: true,
+    //       pauseOnHover: false,
+    //       draggable: false,
+    //       progress: undefined,
+    //       theme: 'colored',
+    //     })
+    //     router.push('/register/seminar')
+    //     return
+    //   }
+    // })
 
     setIsSubmitting(true)
     try {
@@ -229,7 +222,7 @@ export default function Seminar() {
     }
   }
 
-  const priceData = getPrice(data_peserta, isEarlyBird)
+  const priceData = getPrice(data_peserta, true)
 
   const tabs = [
     <>
@@ -464,12 +457,10 @@ export default function Seminar() {
         <span className="mb-[100px] h-[2px] w-full bg-[#FAFAFA]" />
         <div className="flex w-full items-center justify-between">
           <p className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA] lg:text-[30px]">
-            {isEarlyBird
-              ? 'Tiket Early Bird'
-              : `Tiket Bundle ${priceData.totalPeserta} Orang`}
+            {`Tiket Bundle ${priceData.totalPeserta} Orang`}
           </p>
           <p className="block font-sarmady text-[20px] font-[600] text-[#FAFAFD] lg:text-[30px]">
-            Rp {priceData.basePrice}
+            Rp {priceData.basePrice.toLocaleString('id-ID')}
           </p>
         </div>
 
@@ -489,7 +480,7 @@ export default function Seminar() {
             </ul>
 
             <p className="block font-sarmady text-[20px] font-[600] text-[#FAFAFD] lg:text-[30px]">
-              - Rp {priceData.discount}
+              - Rp {priceData.discount.toLocaleString('id-ID')}
             </p>
           </div>
         ) : (
@@ -502,7 +493,7 @@ export default function Seminar() {
             Total Tagihan
           </p>
           <p className="block font-sarmady text-[20px] font-[600] text-[#FAFAFD] lg:text-[30px]">
-            Rp {priceData.totalPrice}
+            Rp {priceData.totalPrice.toLocaleString('id-ID')}
           </p>
         </div>
         <p className="my-[10px] font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
