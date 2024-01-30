@@ -222,7 +222,7 @@ export default function Seminar() {
     }
   }
 
-  const priceData = getPrice(data_peserta, true)
+  const priceData = getPrice(data_peserta, fetchEarlyBirdStatus())
 
   const tabs = [
     <>
