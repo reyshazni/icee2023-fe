@@ -452,7 +452,9 @@ export default function Seminar() {
           Tagihan Pembayaran
         </h2>
         <h2 className=" font-sarmady text-[30px] font-semibold text-[#FAFAFA] lg:text-[50px]">
-          Tiket Grand Seminar ICEE 2024
+          {priceData.isEarlyBird
+            ? 'Tiket Grand Seminar ICEE 2024 (Early Bird)'
+            : 'Tiket Grand Seminar ICEE 2024'}
         </h2>
         <span className="mb-[100px] h-[2px] w-full bg-[#FAFAFA]" />
         <div className="flex w-full items-center justify-between">
@@ -464,27 +466,24 @@ export default function Seminar() {
           </p>
         </div>
 
-        {priceData.discountTexts.length > 1 ? (
-          <div className="flex w-full items-center justify-between">
-            <ul className="flex-col">
-              {priceData.discountTexts.map((text, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="block font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]"
-                  >
-                    - {text}
-                  </li>
-                )
-              })}
-            </ul>
-
-            <p className="block font-sarmady text-[20px] font-[600] text-[#FAFAFD] lg:text-[30px]">
-              - Rp {priceData.discount.toLocaleString('id-ID')}
-            </p>
-          </div>
-        ) : (
+        {priceData.discountData.length < 1 ? (
           <></>
+        ) : (
+          priceData.discountData.map((data, index) => {
+            return (
+              <div
+                key={index}
+                className="flex w-full items-center justify-between"
+              >
+                <p className="block font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[25px]">
+                  - {data.name}
+                </p>
+                <p className="block font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[25px]">
+                  - Rp {data.amount.toLocaleString('id-ID')}
+                </p>
+              </div>
+            )
+          })
         )}
 
         <span className="my-[10px] h-[2px] w-full bg-[#FAFAFA]" />

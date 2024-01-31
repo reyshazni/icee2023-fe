@@ -44,9 +44,10 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       return {
         basePrice: umum * umumPrice + tpb * tpbPrice + hms * hmsPrice,
         discount: 0,
-        discountTexts: [],
+        discountData: [],
         totalPrice: umum * umumPrice + tpb * tpbPrice + hms * hmsPrice,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     } else if (dataPeserta.length === 2) {
       const hmsDiscount = 30000
@@ -55,26 +56,41 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       const basePrice = 160000
       const discount =
         hms * hmsDiscount + tpb * tpbDiscount + umum * umumDiscount + 15000
-      const discountTexts = ['Discount Package for 2 Persons']
+      const discountData = [
+        {
+          name: 'Discount Package for 2 Persons',
+          amount: 15000,
+        },
+      ]
 
       if (umum > 0) {
-        discountTexts.push('Early Bird Discount')
+        discountData.push({
+          name: 'Early Bird Discount',
+          amount: umum * umumDiscount,
+        })
       }
 
       if (hms > 0) {
-        discountTexts.push('Special Discount for HMS Student')
+        discountData.push({
+          name: 'Special Discount for HMS Student',
+          amount: hms * hmsDiscount,
+        })
       }
 
       if (tpb > 0) {
-        discountTexts.push('Special Discount for TPB Student')
+        discountData.push({
+          name: 'Special Discount for TPB Student',
+          amount: tpb * tpbDiscount,
+        })
       }
 
       return {
         basePrice: basePrice,
         discount: discount,
-        discountTexts: discountTexts,
+        discountData: discountData,
         totalPrice: basePrice - discount,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     } else if (dataPeserta.length === 3) {
       const hmsDiscount = 30000
@@ -83,31 +99,45 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       const basePrice = 240000
       const discount =
         hms * hmsDiscount + tpb * tpbDiscount + umum * umumDiscount + 35000
-      const discountTexts = ['Discount Package for 3 Persons']
+      const discountData = [
+        {
+          name: 'Discount Package for 3 Persons',
+          amount: 35000,
+        },
+      ]
 
       if (umum > 0) {
-        discountTexts.push('Early Bird Discount')
+        discountData.push({
+          name: 'Early Bird Discount',
+          amount: umum * umumDiscount,
+        })
       }
 
       if (hms > 0) {
-        discountTexts.push('Special Discount for HMS Student')
+        discountData.push({
+          name: 'Special Discount for HMS Student',
+          amount: hms * hmsDiscount,
+        })
       }
 
       if (tpb > 0) {
-        discountTexts.push('Special Discount for TPB Student')
+        discountData.push({
+          name: 'Special Discount for TPB Student',
+          amount: tpb * tpbDiscount,
+        })
       }
 
       return {
         basePrice: basePrice,
         discount: discount,
-        discountTexts: discountTexts,
+        discountData: discountData,
         totalPrice: basePrice - discount,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     }
   } else {
     // REGULAR
-
     if (dataPeserta.length === 1) {
       const umumPrice = 80000
       const tpbPrice = 60000
@@ -116,52 +146,78 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       return {
         basePrice: umum * umumPrice + tpb * tpbPrice + hms * hmsPrice,
         discount: 0,
-        discountTexts: [],
+        discountData: [],
         totalPrice: umum * umumPrice + tpb * tpbPrice + hms * hmsPrice,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     } else if (dataPeserta.length === 2) {
       const hmsDiscount = 30000
       const tpbDiscount = 20000
       const basePrice = 160000
       const discount = hms * hmsDiscount + tpb * tpbDiscount + 15000
-      const discountTexts = ['Discount Package for 2 Persons']
+      const discountData = [
+        {
+          name: 'Discount Package for 2 Persons',
+          amount: 15000,
+        },
+      ]
 
       if (hms > 0) {
-        discountTexts.push('Special Discount for HMS Student')
+        discountData.push({
+          name: 'Special Discount for HMS Student',
+          amount: hms * hmsDiscount,
+        })
       }
 
       if (tpb > 0) {
-        discountTexts.push('Special Discount for TPB Student')
+        discountData.push({
+          name: 'Special Discount for TPB Student',
+          amount: tpb * tpbDiscount,
+        })
       }
 
       return {
         basePrice: basePrice,
         discount: discount,
-        discountTexts: discountTexts,
+        discountData: discountData,
         totalPrice: basePrice - discount,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     } else if (dataPeserta.length === 3) {
       const hmsDiscount = 30000
       const tpbDiscount = 20000
       const basePrice = 240000
       const discount = hms * hmsDiscount + tpb * tpbDiscount + 35000
-      const discountTexts = ['Discount Package for 3 Persons']
+      const discountData = [
+        {
+          name: 'Discount Package for 3 Persons',
+          amount: 35000,
+        },
+      ]
+
       if (hms > 0) {
-        discountTexts.push('Special Discount for HMS Student')
+        discountData.push({
+          name: 'Special Discount for HMS Student',
+          amount: hms * hmsDiscount,
+        })
       }
 
       if (tpb > 0) {
-        discountTexts.push('Special Discount for TPB Student')
+        discountData.push({
+          name: 'Special Discount for TPB Student',
+          amount: tpb * tpbDiscount,
+        })
       }
 
       return {
         basePrice: basePrice,
         discount: discount,
-        discountTexts: discountTexts,
+        discountData: discountData,
         totalPrice: basePrice - discount,
         totalPeserta: dataPeserta.length,
+        isEarlyBird: isEarlyBird,
       }
     }
   }
