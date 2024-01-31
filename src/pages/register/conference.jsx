@@ -150,7 +150,7 @@ export default function Conference() {
     setIsSubmitting(true)
     try {
       const response = await fetch(
-        'https://be-staging-s3ey3nqirq-et.a.run.app/register/conference',
+        `${process.env.BE_STAGING_URL}register/conference`,
         {
           method: 'POST',
           headers: {
@@ -252,7 +252,7 @@ export default function Conference() {
 
       try {
         const response = await fetch(
-          'https://be-staging-s3ey3nqirq-et.a.run.app/register/upload-registrant/',
+          `${process.env.BE_STAGING_URL}register/upload-registrant/`,
           {
             method: 'POST',
             body: formData,
