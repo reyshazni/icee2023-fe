@@ -132,7 +132,7 @@ export default function Seminar() {
     setIsSubmitting(true)
     try {
       const response = await fetch(
-        `${process.env.BE_STAGING_URL}register/seminar`,
+        `${process.env.BE_PROD_URL}register/seminar`,
         {
           method: 'POST',
           headers: {
@@ -197,7 +197,7 @@ export default function Seminar() {
 
       try {
         const response = await fetch(
-          `${process.env.BE_STAGING_URL}register/upload-registrant/`,
+          `${process.env.BE_PROD_URL}register/upload-registrant/`,
           {
             method: 'POST',
             body: formData,
