@@ -15,12 +15,12 @@ export const carouselData = [
   {
     img: Expo,
     title: 'Expo',
-    desc: 'Expo is a interactive forum where industrial construction company show their products, services, and their newest innovation to the live audience. At Expo, there are Live Exhibition and Company Session. Live Exhibition is an exhibition for company to showcase their products, while company session in a place for Expo audience to gain knowledge about company products who attend the Expo.',
+    desc: 'EXPO is an event that aim to bring construction companies to students and public so they can find out more about the company innovations. Furthermore, there are also a company sessions regarding career, work culture and more related to the insights of companies participating in the EXPO.',
   },
   {
     img: Seminar,
     title: 'Seminar',
-    desc: 'Business Case Seminar “The Land Dilemma: Balancing Needs and Resources” is one of our Business Case Competition event. This event will become a place for people to explore the challenge of land limitation and to find innovative solutions for the sake of sustainable construction',
+    desc: 'GRAND SEMINAR is a specialized event that brings together practitioner, policymakers, researchers, students, and enthusiasts in the field of civil engineering to discuss, learn, and exchange knowledge about "Cutting-edge" Innovations for future infrastructure.',
   },
   {
     img: Talkshow,
