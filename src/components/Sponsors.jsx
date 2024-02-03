@@ -63,7 +63,7 @@ export default function Sponsors({ title, url }) {
         {title}
       </h1>
       <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FAFAFA] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
-        <div className="mb-[20px] flex items-center justify-center gap-[20px]">
+        <div className="mb-[20px] flex-wrap flex items-center justify-center gap-[20px]">
           {xlSponsor.map((sponsor, index) => (
               <div key={index}>
                 <img
@@ -74,7 +74,7 @@ export default function Sponsors({ title, url }) {
               </div>
           ))}
         </div>
-        <div className="mb-[20px] flex items-center justify-center gap-[20px]">
+        <div className="mb-[20px] flex-wrap flex items-center justify-center gap-[20px]">
           {lSponsor.map((sponsor, index) => (
               <div key={index}>
                 <img
@@ -85,7 +85,7 @@ export default function Sponsors({ title, url }) {
               </div>
           ))}
         </div>
-        <div className="mb-[20px] flex items-center justify-center gap-[20px]">
+        <div className="mb-[20px] flex-wrap flex items-center justify-center gap-[20px]">
           {mSponsor.map((sponsor, index) => (
               <div key={index}>
                 <img
@@ -96,7 +96,7 @@ export default function Sponsors({ title, url }) {
               </div>
           ))}
         </div>
-        <div className="flex items-center justify-center gap-[20px]">
+        <div className="flex flex-wrap items-center justify-center gap-[20px]">
           {sSponsor.map((sponsor, index) => (
               <div key={index}>
                 <img
