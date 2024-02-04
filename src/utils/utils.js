@@ -1,6 +1,6 @@
 export const fetchEarlyBirdStatus = () => {
   const earlyBirdStart = new Date('2024-01-30T19:00:00+07:00') // 30 January 2024, 13:00 GMT+7
-  const earlyBirdEnd = new Date('2024-02-02T23:59:00+07:00') // 2 February 2024, 23:59 GMT+7
+  const earlyBirdEnd = new Date('2024-02-09T23:59:00+07:00') // 9 February 2024, 23:59 GMT+7
 
   const currentDate = new Date(
     new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' })

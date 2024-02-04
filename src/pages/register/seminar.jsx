@@ -11,6 +11,8 @@ import { FaTrashCan } from 'react-icons/fa6'
 import { fetchEarlyBirdStatus, getPrice } from '@/utils/utils'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { useRouter } from 'next/router'
+// import Image from 'next/image'
+// import QRISImg from '@/images/qris_icee.jpg'
 
 export default function Seminar() {
   const [loading, setLoading] = useState(false)
@@ -506,6 +508,12 @@ export default function Seminar() {
           E-wallet :<br />
           Shopeepay 08113608170 an. Rose Amelie
         </p>
+        {/* <div className="mb-[50px] flex flex-col">
+          <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
+            QRIS :
+          </p>
+          <Image src={QRISImg} />
+        </div> */}
         <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
           Jika sudah melakukan pembayaran, dapat mengupload bukti pembayaran di
           bawah ini.
@@ -627,7 +635,9 @@ export default function Seminar() {
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href={'https://drive.google.com/drive/folders/1ep9o1V3Ii43XHKqvPEXjAPAc6NBeNXxh?usp=drive_link'}
+            href={
+              'https://drive.google.com/drive/folders/1ep9o1V3Ii43XHKqvPEXjAPAc6NBeNXxh?usp=drive_link'
+            }
             className={`cursor-pointer rounded-lg bg-[rgba(200,235,226)] py-[5px] px-[20px] text-center font-montserrat text-[10px] font-[600] md:w-[150px] md:text-[12px] lg:w-[200px] lg:text-[16px]`}
           >
             Download Here
