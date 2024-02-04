@@ -11,8 +11,8 @@ import { FaTrashCan } from 'react-icons/fa6'
 import { fetchEarlyBirdStatus, getPrice } from '@/utils/utils'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { useRouter } from 'next/router'
-// import Image from 'next/image'
-// import QRISImg from '@/images/qris_icee.jpg'
+import Image from 'next/image'
+import QRISImg from '@/images/qris_icee.jpg'
 
 export default function Seminar() {
   const [loading, setLoading] = useState(false)
@@ -504,16 +504,18 @@ export default function Seminar() {
           Rekening :<br />
           BCA 2820700760 an. Rose Amelie
         </p>
-        <p className="mb-[50px] font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
+        <p className="my-[10px] font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
           E-wallet :<br />
           Shopeepay 08113608170 an. Rose Amelie
         </p>
-        {/* <div className="mb-[50px] flex flex-col">
+        <div className="mb-[50px] flex w-full flex-col">
           <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
             QRIS :
           </p>
-          <Image src={QRISImg} />
-        </div> */}
+          <div className="m-auto w-48 w-full rounded-lg object-contain lg:w-[300px]">
+            <Image src={QRISImg} />
+          </div>
+        </div>
         <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
           Jika sudah melakukan pembayaran, dapat mengupload bukti pembayaran di
           bawah ini.
