@@ -28,7 +28,16 @@ export default function Register() {
             <RegisterCard
               data={carouselData[0]}
               onClick={() => {
-                router.push('/register/conference')
+                toast.info('Registration has been closed', {
+                  position: 'bottom-center',
+                  autoClose: 3000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: 'colored',
+                })
               }}
             />
           </SlideFromLeft>

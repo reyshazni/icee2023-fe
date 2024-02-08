@@ -7,6 +7,7 @@ import { ClipLoader } from 'react-spinners'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
 import SubmitLoader from '@/components/Loader/SubmitLoader'
+import Custom404 from '../404'
 
 export default function Conference() {
   const [loading, setLoading] = useState({
@@ -298,6 +299,8 @@ export default function Conference() {
   }
 
   const namaAnggotaSatu = watch(`data_diri.${0}.nama_lengkap`)
+  
+  return <Custom404 />
 
   return (
     <>
