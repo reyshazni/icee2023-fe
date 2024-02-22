@@ -51,7 +51,7 @@ export default function Expo() {
     console.log('DATA : ', data)
     try {
       const response = await fetch(
-        'https://be-staging-s3ey3nqirq-et.a.run.app/register/expo',
+        `${process.env.BE_PROD_URL}register/expo`,
         {
           method: 'POST',
           headers: {
@@ -203,7 +203,7 @@ export default function Expo() {
               </div>
               <div className="">
                 <label className="block font-sarmady text-[20px] font-[600] text-[#FAFAFA]">
-                  Sumber Info
+                  Dari mana Anda mengetahui informasi terkait acara ini?
                 </label>
                 <select
                   placeholder="Select one"
