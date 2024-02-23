@@ -148,7 +148,7 @@ export default function Seminar() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
-      console.log('Success', done)
+      // console.log('Success', done)
       setIsSubmitting(false)
       const done = await response.json()
       toast.success(done.data.message, {
@@ -164,8 +164,7 @@ export default function Seminar() {
       setTabIndex((prev) => prev + 1)
       resetForm()
     } catch (error) {
-      // TODO : HANDLE ERROR
-      console.error('Error uploading file:', error)
+      // console.error('Error uploading file:', error)
       setIsSubmitting(false)
 
       toast.error(error.message, {
@@ -199,7 +198,7 @@ export default function Seminar() {
 
       try {
         const response = await fetch(
-          `${process.env.BE_PROD_URL}register/upload-registrant/`,
+          `${process.env.BE_STAGING_URL}register/upload-registrant/`,
           {
             method: 'POST',
             body: formData,

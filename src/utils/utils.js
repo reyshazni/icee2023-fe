@@ -38,7 +38,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
   if (isEarlyBird) {
     if (dataPeserta.length === 1) {
       const umumPrice = 60000
-      const tpbPrice = 55000
+      const tpbPrice = 45000
       const hmsPrice = 45000
 
       return {
@@ -51,7 +51,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       }
     } else if (dataPeserta.length === 2) {
       const hmsDiscount = 30000
-      const tpbDiscount = 20000
+      const tpbDiscount = 30000
       const umumDiscount = 20000
       const basePrice = 160000
       const discount =
@@ -94,7 +94,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       }
     } else if (dataPeserta.length === 3) {
       const hmsDiscount = 30000
-      const tpbDiscount = 20000
+      const tpbDiscount = 30000
       const umumDiscount = 20000
       const basePrice = 240000
       const discount =
@@ -140,7 +140,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
     // REGULAR
     if (dataPeserta.length === 1) {
       const umumPrice = 80000
-      const tpbPrice = 60000
+      const tpbPrice = 50000
       const hmsPrice = 50000
 
       return {
@@ -153,7 +153,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       }
     } else if (dataPeserta.length === 2) {
       const hmsDiscount = 30000
-      const tpbDiscount = 20000
+      const tpbDiscount = 30000
       const basePrice = 160000
       const discount = hms * hmsDiscount + tpb * tpbDiscount + 15000
       const discountData = [
@@ -187,7 +187,7 @@ export const getPrice = (dataPeserta, isEarlyBird) => {
       }
     } else if (dataPeserta.length === 3) {
       const hmsDiscount = 30000
-      const tpbDiscount = 20000
+      const tpbDiscount = 30000
       const basePrice = 240000
       const discount = hms * hmsDiscount + tpb * tpbDiscount + 35000
       const discountData = [
