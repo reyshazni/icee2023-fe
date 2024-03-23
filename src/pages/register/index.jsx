@@ -45,7 +45,16 @@ export default function Register() {
             <RegisterCard
               data={carouselData[1]}
               onClick={() => {
-                router.push('/register/expo')
+                toast.info('Registration has been closed', {
+                  position: 'bottom-center',
+                  autoClose: 3000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: 'colored',
+                })
               }}
             />
           </SlideFromLeft>
@@ -53,7 +62,16 @@ export default function Register() {
             <RegisterCard
               data={carouselData[2]}
               onClick={() => {
-                router.push('/register/seminar')
+                toast.info('Registration has been closed', {
+                  position: 'bottom-center',
+                  autoClose: 3000,
+                  hideProgressBar: true,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: false,
+                  progress: undefined,
+                  theme: 'colored',
+                })
               }}
             />
           </SlideFromLeft>
