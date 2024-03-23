@@ -165,7 +165,7 @@ export default function Conference() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
-      console.log('Success', done)
+      // console.log('Success', done)
       setIsSubmitting(false)
       const done = await response.json()
       toast.success(done.data.message, {
@@ -265,7 +265,7 @@ export default function Conference() {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         } else {
-          console.log(`${type.toUpperCase()} URL: `, data.data.file_url)
+          // console.log(`${type.toUpperCase()} URL: `, data.data.file_url)
           if (type === 'ktm') {
             setValue(`data_diri.${index}.url_ktm`, data.data.file_url)
             setApiResponse({ ...apiResponse, [index]: data })

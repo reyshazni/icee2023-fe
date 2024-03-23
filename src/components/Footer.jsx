@@ -127,7 +127,9 @@ export function Footer() {
             <EmailIcon
               className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
               onClick={() => {
-                console.log('EMAIL')
+                router.push(
+                  'mailto:itbcivilengineeringexpo@gmail.com?Subject=Hi%20There%20I%20Came%20From%20Your%20Website%21&Body=Enter%20Your%20Message%20Here%21'
+                )
               }}
             />
             <InstagramIcon
@@ -139,7 +141,7 @@ export function Footer() {
             <WhatsappIcon
               className="h-[15px] w-[15px] cursor-pointer lg:h-[30px] lg:w-[30px]"
               onClick={() => {
-                console.log('WA')
+                router.push('https://wa.me/6282115125731')
               }}
             />
             <TiktokIcon

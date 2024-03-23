@@ -210,7 +210,7 @@ export default function Seminar() {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         } else {
-          console.log('URL: ', data.data.file_url)
+          // console.log('URL: ', data.data.file_url)
           setValue('url_bukti_pembayaran', data.data.file_url)
           setApiResponse({ ...apiResponse, url_bukti_pembayaran: data })
         }
