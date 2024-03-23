@@ -512,7 +512,7 @@ export default function Seminar() {
             QRIS :
           </p>
           <div className="m-auto w-48 w-full rounded-lg object-contain lg:w-[300px]">
-            <Image src={QRISImg} />
+            <Image src={QRISImg} alt='QRIS Payment'/>
           </div>
         </div>
         <p className=" font-sarmady text-[12px] font-[600] text-[#FAFAFA] lg:text-[20px]">
