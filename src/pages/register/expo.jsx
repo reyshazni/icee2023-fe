@@ -52,7 +52,7 @@ export default function Expo() {
     }
 
     setIsSubmitting(true)
-    console.log('DATA : ', data)
+    // console.log('DATA : ', data)
     try {
       const response = await fetch(
         `${process.env.BE_PROD_URL}register/expo`,
@@ -69,7 +69,7 @@ export default function Expo() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
-      console.log('Success', done)
+      // console.log('Success', done)
       setIsSubmitting(false)
       const done = await response.json()
       toast.success(done.data.message, {

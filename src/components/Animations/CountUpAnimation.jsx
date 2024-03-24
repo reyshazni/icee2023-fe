@@ -26,7 +26,7 @@ export default function CountUpAnimation({ num, duration, text, isPlus }) {
           end={num}
           duration={duration}
           suffix={isPlus ? '+' : ''}
-          onEnd={() => console.log('Counting animation completed')}
+          onEnd={() => {}}
         >
           {({ countUpRef, start }) => (
             <span

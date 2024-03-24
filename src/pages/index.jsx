@@ -19,6 +19,7 @@ import NumberLine from '@/components/Background/NumberLine'
 import SponsorLine from '@/components/Background/SponsorLine'
 import SponsorLine2 from '@/components/Background/SponsorLine2'
 import PartnerLine from '@/components/Background/PartnerLine'
+import SponsorsLocal from '@/components/SponsorsLocal'
 
 export default function Home() {
   return (
@@ -32,20 +33,16 @@ export default function Home() {
       </Head>
       <Header />
       <main className="relative overflow-hidden bg-[#004141] bg-[url(../images/backgrounds/stars-pattern.svg)]">
-        
         {/* BACKGROUND SVGs */}
         <Garis className="absolute top-[20%] animate-glow " />
         <WigglyLine className="absolute top-[30%] right-0 animate-glow " />
         <WigglyLine2 className="absolute top-[30%] right-0 animate-glow " />
-        <EventLine className="absolute top-[44%] right-0 animate-glow"/>
-        <PastEventLine className="absolute top-[55%] animate-glow"/>
-        <NumberLine className="absolute top-[70%] right-0 animate-glow"/>
-        <SponsorLine className="absolute top-[80%] animate-glow"/>
-        <SponsorLine2 className="absolute top-[80%] animate-glow"/>
-        <PartnerLine className="absolute top-[90%] right-0 animate-glow"/>
-
-
-
+        <EventLine className="absolute top-[44%] right-0 animate-glow" />
+        <PastEventLine className="absolute top-[55%] animate-glow" />
+        <NumberLine className="absolute top-[70%] right-0 animate-glow" />
+        <SponsorLine className="absolute top-[80%] animate-glow" />
+        <SponsorLine2 className="absolute top-[80%] animate-glow" />
+        <PartnerLine className="absolute top-[90%] right-0 animate-glow" />
 
         <FadeIn duration={6}>
           <VideoPlayer />
@@ -60,15 +57,14 @@ export default function Home() {
 
         <Numbers />
 
-        <Sponsors
-          title={'Our Sponsors'}
-          url={process.env.BE_STAGING_SPONSOR_URL}
-        />
+        <SponsorsLocal title={'Our Sponsors'} isSponsor={true} />
 
-        <Sponsors
+        <SponsorsLocal title={'Our Media Partners'} isSponsor={false} />
+
+        {/* <Sponsors
           title={'Our Media Partners'}
           url={process.env.BE_STAGING_MEDPAR_URL}
-        />
+        /> */}
       </main>
       <Footer />
     </>
