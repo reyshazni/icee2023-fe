@@ -7,7 +7,7 @@ import MCM from '@/images/sponsors/MCM (S).png'
 import PTBajaTitianUtama from '@/images/sponsors/PT Baja Titian Utama (s).jpg'
 import PTDSI from '@/images/sponsors/PT DSI (M).png'
 import PTGSU from '@/images/sponsors/PT GSU (s).png'
-import PTMRTJakarta from '@/images/sponsors/PT MRT Jakarta (S).png'
+import PTMRTJakarta from '@/images/sponsors/PT MRT Jakarta (s).png'
 import PTPromisco from '@/images/sponsors/PT Promisco (S).png'
 import PTSIG from '@/images/sponsors/PT SIG (s).png'
 import PTWIKA from '@/images/sponsors/PT WIKA Beton (S).gif'
@@ -74,6 +74,18 @@ const xlMedpart = []
 
 const sSponsor = [
   {
+    file_url: PTBajaTitianUtama,
+    name: 'PT Baja Titian Utama',
+  },
+  {
+    file_url: TNT,
+    name: 'TNT',
+  },
+  {
+    file_url: KrakatauSteel,
+    name: 'Krakatau Steel',
+  },
+  {
     file_url: ASR,
     name: 'ASR',
   },
@@ -85,18 +97,12 @@ const sSponsor = [
     file_url: JasaMarga,
     name: 'Jasa Marga',
   },
-  {
-    file_url: KrakatauSteel,
-    name: 'Krakatau Steel',
-  },
+
   {
     file_url: MCM,
     name: 'MCM',
   },
-  {
-    file_url: PTBajaTitianUtama,
-    name: 'PT Baja Titian Utama',
-  },
+
   {
     file_url: PTGSU,
     name: 'PT GSU',
@@ -116,10 +122,6 @@ const sSponsor = [
   {
     file_url: PTWIKA,
     name: 'PT WIKA Beton',
-  },
-  {
-    file_url: TNT,
-    name: 'TNT',
   },
 ]
 
@@ -145,7 +147,7 @@ export default function SponsorsLocal({ title, isSponsor }) {
         {title}
       </h1>
       {isSponsor ? (
-        <div className="flex w-[80vw] flex-col rounded-[30px] bg-[#FFFFFF] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
+        <div className="flex w-[80vw] flex-col  rounded-[30px] bg-[#FFFFFF] p-[40px] shadow-[0_4px_100px_0_rgba(250,250,250,0.25)]">
           {/* <div className="mb-[20px] flex flex-wrap items-center justify-center gap-[20px]">
             {xlSponsor.map((sponsor, index) => (
               <Image
@@ -177,7 +179,7 @@ export default function SponsorsLocal({ title, isSponsor }) {
               </div>
             ))}
           </div>
-          <div className="relative flex flex-wrap items-center justify-center gap-[20px]">
+          <div className="relative mb-[20px] flex flex-wrap items-center justify-center gap-[20px]">
             {sSponsor.map((sponsor, index) => {
               switch (sponsor.name) {
                 case 'Bappeda':
@@ -190,6 +192,16 @@ export default function SponsorsLocal({ title, isSponsor }) {
                       width={64}
                     />
                   )
+                case 'Jasa Marga':
+                  return (
+                    <Image
+                      key={index}
+                      src={sponsor.file_url}
+                      alt={sponsor.name}
+                      height={42}
+                      width={148}
+                    />
+                  )
                 case 'MCM':
                   return (
                     <Image
@@ -197,7 +209,17 @@ export default function SponsorsLocal({ title, isSponsor }) {
                       src={sponsor.file_url}
                       alt={sponsor.name}
                       height={42}
-                      width={164}
+                      width={240}
+                    />
+                  )
+                case 'TNT':
+                  return (
+                    <Image
+                      key={index}
+                      src={sponsor.file_url}
+                      alt={sponsor.name}
+                      height={100}
+                      width={150}
                     />
                   )
                 case 'PT Baja Titian Utama':
@@ -217,7 +239,17 @@ export default function SponsorsLocal({ title, isSponsor }) {
                       src={sponsor.file_url}
                       alt={sponsor.name}
                       height={100}
-                      width={100}
+                      width={160}
+                    />
+                  )
+                case 'PT SIG':
+                  return (
+                    <Image
+                      key={index}
+                      src={sponsor.file_url}
+                      alt={sponsor.name}
+                      height={48}
+                      width={48}
                     />
                   )
 
